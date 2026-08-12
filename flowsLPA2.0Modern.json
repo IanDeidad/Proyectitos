@@ -1,0 +1,2384 @@
+[
+    {
+        "id": "1af512e888b131db",
+        "type": "tab",
+        "label": "EmailsReportes",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "400949ca1e2b628e",
+        "type": "tab",
+        "label": "Notificaciones 2.0",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "37bdfc78d951f3d2",
+        "type": "tab",
+        "label": "Notificaciones Deprecated",
+        "disabled": true,
+        "info": "# Flujos para enviar recordatorios a los auditores",
+        "env": []
+    },
+    {
+        "id": "90b0953be5b15f1c",
+        "type": "junction",
+        "z": "37bdfc78d951f3d2",
+        "x": 340,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "26eade731238540f",
+        "type": "junction",
+        "z": "37bdfc78d951f3d2",
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "991f8958f5186011",
+                "980744f2024d8b64"
+            ]
+        ]
+    },
+    {
+        "id": "1be5ab38c150da7f",
+        "type": "junction",
+        "z": "37bdfc78d951f3d2",
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "069527be1b4f6aee"
+            ]
+        ]
+    },
+    {
+        "id": "59ed21dce8872b62",
+        "type": "junction",
+        "z": "37bdfc78d951f3d2",
+        "x": 320,
+        "y": 580,
+        "wires": [
+            [
+                "103f4772cf99670a"
+            ]
+        ]
+    },
+    {
+        "id": "3081a65d469e5b1b",
+        "type": "junction",
+        "z": "400949ca1e2b628e",
+        "x": 340,
+        "y": 540,
+        "wires": [
+            [
+                "e7fe366433a49d2c"
+            ]
+        ]
+    },
+    {
+        "id": "2a2fb33ccedc0f2d",
+        "type": "global-config",
+        "env": [
+            {
+                "name": "htmlAD",
+                "value": "`  <html>  <body>   <h1>Recordatorio de Auditoría Pendiente Tablero LPA</h1>                     <p>Muy buenas tardes <b>❤ Anahí Aguilar ❤ y Diego Mandujano.</b> </p>                     <br>                     <p>                     Se detectó que aún está pendiente el registro de su auditoría semanal en el tablero LPA.                     Recomendamos hacer el registro de la auditoría de esta semana antes de que acabe el día. </p>                      <p>                     Este correo no debería enviarse si alguno de los dos realizó la auditoría en tiempo, si esto no funcionó así, es importante notificarlo.                     </p>                     <br>                     <p><i>Si tienen alguna duda acerca de este correo, por favor comuniquense con el departamento                     de automatización o envien correo a ian.barcenas@mitchellplastics.com</i></p>                     <br>                     <p><b>Saludos</b></p>                 </body>             </html>             `",
+                "type": "str"
+            },
+            {
+                "name": "htmlADSegNoti",
+                "value": "` <html>     <body>         <h1 style=\"color:red;\">2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>         <p>Muy buenas tardes <b>❤ Anahí Soledad ❤, Diego y Jonathan</b> </p>.         <br>         <p>         Se detectó que aún está pendiente el registro de la auditoría semanal de los usuarios en el tablero LPA.         Este es un amable recordatorio de que se acerca la fecha límite de esta semana. Si hay algún problema         por el cual no hayan podido hacerlo, por favor, notifiquenlo.         </p>          <p>         Este correo no debería enviarse si alguno de los dos usuarios, Anahí o Diego, realizó la auditoría en tiempo, si esto no funcionó así, es importante notificarlo.         </p>         <br>         <p><i>Si tienen alguna duda acerca de este correo, por favor comuniquense con el departamento         de automatización o envien un correo a ian.barcenas@mitchellplastics.com</i></p>         <br>         <p><b>Saludos</b></p>     </body> </html> `",
+                "type": "str"
+            },
+            {
+                "name": "htmlOSSegNoti",
+                "value": "` <html>     <body>         <h1 style=\"color:red;\">2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>         <p>Muy buenas tardes <b>Scott Coulter, Omar Sánchez y Juventino Morales</b> </p>.         <br>         <p>         Se detectó que aún está pendiente el registro de la auditoría semanal de los usuarios en el tablero LPA.         Este es un amable recordatorio de que se acerca la fecha límite de esta semana. Si hay algún problema         por el cual no hayan podido hacerlo, por favor, notifiquenlo.         </p>          <p>         Este correo no debería enviarse si alguno de los dos usuarios, Scott u Omar, realizó la auditoría en tiempo, si esto no funcionó así, es importante notificarlo.         </p>         <br>         <p><i>Si tienen alguna duda acerca de este correo, por favor comuniquense con el departamento         de automatización o envien un correo a ian.barcenas@mitchellplastics.com</i></p>         <br>         <p><b>Saludos</b></p>     </body> </html> `",
+                "type": "str"
+            },
+            {
+                "name": "htmlOS",
+                "value": "` <html>     <body>         <h1>Recordatorio de Auditoría Pendiente Tablero LPA</h1>         <p>Muy buenas tardes <b>Scott Coulter y Omar Sánchez</b>. </p>         <br>         <p>         Se detectó que aún está pendiente el registro de su auditoría semanal en el tablero LPA.         Recomendamos hacer el registro de la auditoría de esta semana antes de que acabe el día.  </p>          <p>         Este correo no debería enviarse si alguno de los dos realizó la auditoría en tiempo, si esto no funcionó así, es importante notificarlo.         </p>         <br>         <p><i>Si tienen alguna duda acerca de este correo, por favor comuniquense con el departamento         de automatización o envien un correo a ian.barcenas@mitchellplastics.com</i></p>         <br>         <p><b>Saludos</b></p>     </body> </html> `",
+                "type": "str"
+            },
+            {
+                "name": "htmlJE",
+                "value": "` <html>     <body>         <h1>Recordatorio de Auditoría Pendiente Tablero LPA</h1>         <p>Muy buenas tardes <b>Jonathan Kebick y Eduardo Pinto</b>.</p>         <br>         <p>         Se detectó que aún está pendiente el registro de su auditoría semanal en el tablero LPA.        Recomendamos hacer el registro de la auditoría de esta semana antes de que acabe el día. Si hay algún problema         por el cual no hayan podido hacerlo, por favor, notifiquenlo.          </p>          <p>         Este correo no debería enviarse si alguno de los dos realizó la auditoría en tiempo, si esto no funcionó así, es importante notificarlo.         </p>         <br>         <p><i>Si tienen alguna duda acerca de este correo, por favor comuniquense con el departamento         de automatización o envien un correo a ian.barcenas@mitchellplastics.com</i></p>         <br>         <p><b>Saludos</b></p>     </body> </html> `",
+                "type": "str"
+            },
+            {
+                "name": "htmlJESegNoti",
+                "value": "` <html>     <body>         <h1 style=\"color:red;\">2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>         <p>Muy buenas tardes <b>Jonathan Kebick, Eduardo Pinto y Juventino Morales</b> .</p>         <br>         <p>         Se detectó que aún está pendiente el registro de la auditoría semanal de los usuarios en el tablero LPA.         Este es un amable recordatorio de que se acerca la fecha límite de esta semana. Si hay algún problema         por el cual no hayan podido hacerlo, por favor, notifiquenlo.         </p>          <p>         Este correo no debería enviarse si alguno de los dos usuarios, Jonathan o Eduardo, realizó la auditoría en tiempo. Si esto no funcionó así, es importante notificarlo.         </p>         <br>         <p><i>Si tienen alguna duda acerca de este correo, por favor comuniquense con el departamento         de automatización o envien un correo a ian.barcenas@mitchellplastics.com</i></p>         <br>         <p><b>Saludos</b></p>     </body> </html> `",
+                "type": "str"
+            },
+            {
+                "name": "htmlPE",
+                "value": " <html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Process Engineering</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlQE",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Quality Engineering</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlPAINT",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Painting</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlRH",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Human Resources</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlSHIPPING",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Shipping</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlCUSTOMER",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report  Customer Service Representative</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlSHIFT",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Shift Supervisors</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlPT",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Process Technicians</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlOJT",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report On Job Trainers</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            },
+            {
+                "name": "htmlMANAGERS",
+                "value": "<html>     <body>         <table cellpadding=\"10\" cellspacing=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; table-layout: fixed; width: 100%; max-width: 2000px; border: 3px solid #ddd;\">             <tr style=\"background-color:#68ABE3;\">                 <th colspan=\"6\">Report Managers</th>             </tr>             <tr>                 <th>      </th>                 <th>Monday</th>                 <th>Tuesday</th>                 <th>Wednesday</th>                 <th>Thursday</th>                 <th>Friday</th>             </tr> ",
+                "type": "str"
+            }
+        ],
+        "modules": {
+            "node-red-contrib-postgresql": "0.15.4"
+        }
+    },
+    {
+        "id": "7eabd8e47bc408c3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c988a123dbaff1be",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": 5432,
+        "portFieldType": "num",
+        "database": "LPADatabase",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "node-red",
+        "userFieldType": "str",
+        "password": "123456",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "6e61988921d24b48",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "query INSERT",
+        "func": "var now = new Date()\nmsg.auditores = env.get(\"auditores\")\nmsg.id = (msg.payload).slice(3, -8);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "6d041e342b225f5f"
+            ]
+        ]
+    },
+    {
+        "id": "3f997693ebaf4899",
+        "type": "mqtt in",
+        "z": "1af512e888b131db",
+        "name": "",
+        "topic": "/UserID",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "7eabd8e47bc408c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 100,
+        "wires": [
+            [
+                "6e61988921d24b48"
+            ]
+        ]
+    },
+    {
+        "id": "5bee240ca2f17c6f",
+        "type": "comment",
+        "z": "1af512e888b131db",
+        "name": "Flujo para insertar nuevos datos en tabla general",
+        "info": "",
+        "x": 200,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "fc200ea1205119de",
+        "type": "inject",
+        "z": "1af512e888b131db",
+        "name": "18:00 Envio Diario",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 18 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "ca7bc3b737b07170"
+            ]
+        ]
+    },
+    {
+        "id": "7d1dc43e39c892aa",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "d": true,
+        "name": "consulta AUDITORES",
+        "func": "msg.tabla = 'auditores'\nmsg.topic =\n`\nSELECT nombre AS auditor, \ndias AS dias\nFROM auditores \nORDER BY nombre\n`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2dee3e9958afd855",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "d": true,
+        "name": "consulta REGISTROS",
+        "func": "msg.tabla = 'registros'\nmsg.topic =\n`\nSELECT nombre AS auditor, \nCOUNT(identificador) AS registro \nFROM registros \nWHERE CURDATE() = DATE(fecha)\nGROUP BY nombre\nORDER BY nombre\n`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0945ad5c9e71a032",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "d": true,
+        "name": "consulta REGISTROS",
+        "func": "msg.tabla = 'registros'\nmsg.topic =\n`\nSELECT nombre AS auditor, \nCOUNT(identificador) AS registros \nFROM registros \nWHERE fecha>= DATE_SUB(NOW(), INTERVAL 5 DAY)\nGROUP BY nombre\nORDER BY nombre\n`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d392c5cc0e78a4fe",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "d": true,
+        "name": "consulta AUDITORES",
+        "func": "msg.tabla = 'auditores'\nmsg.topic =\n`\nSELECT nombre AS auditor, \ndiasauditoria AS diasauditoria \nFROM auditores \nORDER BY nombre\n`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b31091bdbba59ae2",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "matching REGISTROS",
+        "func": "let registros = msg.payload;\nvar hoy = new Date();\nlet total = 0;\nlet htmlMensaje2 = '';\nlet htmlMensaje3 = `<h2 style=\"color:red;\">Auditores que NO hicieron su auditoría hoy:</h2>`\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index]\n\n    if(registroEncontrado.registros > 0){\n        total += Number(registroEncontrado.registros)\n        encontrado = 1;\n        \n        if(registroEncontrado.nombre == 'Omar Sanchez' || registroEncontrado.nombre == 'Scott Coulter'){\n            htmlMensaje2 += `<li>Omar Sanchez/Scott Coulter: ${registroEncontrado.registros} </li>`\n        } else if(registroEncontrado.nombre == 'Jonathan Kebick' || registroEncontrado.nombre == 'Eduardo Pinto'){\n            htmlMensaje2 += `<li>Jonathan Kebick/Eduardo Pinto: ${registroEncontrado.registros}</li>`\n        } else if (registroEncontrado.nombre == 'Diego Mandujano' || registroEncontrado.nombre == 'Anahi Aguilar'){\n            htmlMensaje2 += `<li>Anahí Aguilar/Diego Mandujano: ${registroEncontrado.registros}</li>`\n        } else {\n            htmlMensaje2 += `<li>${registroEncontrado.nombre}: ${registroEncontrado.registros}</li>`\n        }\n    } \n\n\n    if(encontrado == 0){\n        let diasAuditoria = registros[index].dias.split(',')\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay())\n\n        if(tocaDia != undefined){\n            htmlMensaje3 += `<li>${registros[index].nombre}</li>`\n        }\n    }\n}\n\nlet htmlMensaje1 = \n`\n<html>\n    <body>\n        <h1 style=\"color:blue;\">Reporte Diario de Registros Tablero LPA</h1>\n        <p> Se han hecho ${total} registros en el tablero el dia de hoy <b>${hoy.toLocaleDateString()}</b>. </p>\n        <h2 style=\"color:green;\">Auditores y cantidad de registros:</h2>\n    </body>\n</html>\n`;\nmsg.payload = htmlMensaje1 + htmlMensaje2 + htmlMensaje3;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "c04cc6306bef8cec"
+            ]
+        ]
+    },
+    {
+        "id": "c04cc6306bef8cec",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "enviar CORREO",
+        "func": "/*********************************************************************\nPor IAN LUIS BARCENAS MORENO amorosamente para mitchi: IanDeidad en github\nhttps://github.com/IanDeidad\n\nEste codigo se divide en dos partes, la primera genera el correo electronico\nalmacenando el mensaje en una cadena de texto estructurada con la sintaxis de\nHTML para formar el formato del cuerpo del correo (colores, tamanos de fuente etc.)\n\nPARA QUE EL CODIGO FUNCIONE:\nEs necesario ir al apartado de configuracion e importar la libreria de \nNode.js nodemail. De ahi que sea necesario usar este nodo y NOO el de email normal\nque se instala en los pallets de node-red como en el flujo deprecated de este programa\n\nSe debe instalar con node.js con el comando:\n\nnpm install nodemail \n\nEN LA DIRECCION donde esta node-red instalado. Suele estar como archivo oculto .node-red\nen el usuario de la raspberry.\n\n********************************************************************\n/*-------------------------- Conexion con servidor y envio con SMTP ----------------------------------------------------------------------------- */\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1,\n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,       \n    ignoreTLS: true,      \n    connectionTimeout: 1000000, \n    greetingTimeout: 1000000,   \n    timeout: 1000000, \n    tls: {\n        rejectUnauthorized: false \n    }\n});\n\nconst mailOptions = {\n    from: \"mpq.lpaboard@mitchellplastics.com\", \n    to: 'ian.barcenas@mitchellplastics.com',\n    subject: \"Reporte Diario Tablero LPA\",\n    html: msg.payload\n};\n\n\nnode.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\ntransporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\nreturn null; \n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 780,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-envelope"
+    },
+    {
+        "id": "a0f202b3c1aff367",
+        "type": "inject",
+        "z": "1af512e888b131db",
+        "name": "18:00 Envio mensual",
+        "props": [],
+        "repeat": "",
+        "crontab": "10 18 * * 5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "52c1000b6504f2cd"
+            ]
+        ]
+    },
+    {
+        "id": "4126af87c1cd8011",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "matching REGISTROS",
+        "func": "let registros = msg.payload;\nvar hoy = new Date();\nvar pasado = new Date()\npasado = pasado.setDate(hoy.getDate() - 4)\nvar pasado_formato = new Date(pasado)\nlet total = 0;\nlet htmlMensaje2 = '';\nlet htmlMensaje3 = `<h2 style=\"color:red;\">Auditores que NO hicieron su auditoría este mes:</h2>`\nlet JEflag = 0;\nlet OSflag = 0;\nlet ADflag = 0;\nvar JERegistros = 0;\nvar OSRegistros = 0;\nlet ADRegistros = 0;\nlet auditoresPares = ['Scott Coulter', 'Omar Sanchez', 'Jonathan Kebick', 'Eduardo Pinto', 'Anahi Aguilar', 'Diego Mandujano']\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    \n    let registroEncontrado = registros[index]\n\n    if(registroEncontrado.registros > 0){\n        total += Number(registroEncontrado.registros);\n        let maximo = 1;\n        let diasAuditoria = registros[index].dias.split(',');\n        if(diasAuditoria == \"semanal\"){\n            maximo = 20;\n        }\n        if(diasAuditoria == \"mensual\"){\n            maximo = 1;\n        }\n        if (diasAuditoria.length>0){\n            maximo = diasAuditoria.length*4;\n        }\n        \n\n        if(registroEncontrado.nombre == 'Jonathan Kebick' || registroEncontrado.nombre == 'Eduardo Pinto'){\n            JERegistros += Number(registroEncontrado.registros); \n            JEflag = 1;\n        } else if (registroEncontrado.nombre == 'Scott Coulter' || registroEncontrado.nombre == 'Omar Sanchez'){\n            OSRegistros += Number(registroEncontrado.registros);\n            OSflag = 1;\n        } else if (registroEncontrado.nombre == 'Anahi Aguilar' || registroEncontrado.nombre == 'Diego Mandujano') {\n            ADRegistros += Number(registroEncontrado.registros);\n            ADflag = 1;\n        } else{\n            htmlMensaje2 += `<li>${registroEncontrado.nombre} : <span style=\"color: ${registroEncontrado.registros >= maximo ? 'green' : 'red'};\">${registroEncontrado.registros} / ${maximo}</span></li>`\n        }\n        encontrado = 1;\n    } \n\n    if(encontrado == 0  && !(auditoresPares.includes(registros[index].auditor))){\n        htmlMensaje3 += `<li>${registros[index].nombre}</li>`\n    }\n}\n\nif(JERegistros > 0){ \n    htmlMensaje2 += `<li >Jonathan Kebick/Eduardo Pinto : <span style=\"color: ${JERegistros >= 4 ? 'green' : 'red'};\">${JERegistros} / 4</span></li>`\n} else {\n    htmlMensaje3 += `<li>Jonathan Kebick/Eduardo Pinto</li>`\n}\nif(OSRegistros > 0){\n    htmlMensaje2 += `<li>Scott Coulter/Omar Sanchez :<span style=\"color: ${OSRegistros >= 4 ? 'green' : 'red'};\"> ${OSRegistros} / 4</li>`\n}else {\n    htmlMensaje3 += `<li>Scott Coulter/Omar Sanchez</li>`\n}\nif(ADRegistros > 0){\n    htmlMensaje2 += `<li>Anahí Aguilar/Diego Mandujano:<span style=\"color: ${ADRegistros >= 4 ? 'green' : 'red'};\"> ${ADRegistros} / 4 </span></li>`\n} else {\n    htmlMensaje3 += `<li>Anahí Aguilar/Diego Mandujano</li>`\n}\n\nJEflag = 0;\nOSflag = 0;\nADflag = 0;\n\nlet htmlMensaje1 = \n`\n<html>\n    <body>\n        <h1 style=\"color:blue;\">Reporte Mensual de Registros Tablero LPA</h1>\n        <p> Se han hecho ${total} registros en el tablero este mes de\n        <b>${hoy.toLocaleDateString('es-ES', { month: 'long' })}</b>. </p>\n        <h2 style=\"color:green;\">Auditores y cantidad de registros:</h2>\n    </body>\n</html>\n`;\nmsg.payload = htmlMensaje1 + htmlMensaje2 + htmlMensaje3;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac85637b647b2d49",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "enviar CORREO",
+        "func": "/*********************************************************************\nPor IAN LUIS BARCENAS MORENO amorosamente para mitchi: IanDeidad en github\nhttps://github.com/IanDeidad\n\nEste codigo se divide en dos partes, la primera genera el correo electronico\nalmacenando el mensaje en una cadena de texto estructurada con la sintaxis de\nHTML para formar el formato del cuerpo del correo (colores, tamanos de fuente etc.)\n\nPARA QUE EL CODIGO FUNCIONE:\nEs necesario ir al apartado de configuracion e importar la libreria de \nNode.js nodemail. De ahi que sea necesario usar este nodo y NOO el de email normal\nque se instala en los pallets de node-red como en el flujo deprecated de este programa\n\nSe debe instalar con node.js con el comando:\n\nnpm install nodemail \n\nEN LA DIRECCION donde esta node-red instalado. Suele estar como archivo oculto .node-red\nen el usuario de la raspberry.\n\n********************************************************************\n/*-------------------------- Conexion con servidor y envio con SMTP ----------------------------------------------------------------------------- */\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1,\n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,       \n    ignoreTLS: true,      \n    connectionTimeout: 1000000, \n    greetingTimeout: 1000000,   \n    timeout: 1000000, \n    tls: {\n        rejectUnauthorized: false \n    }\n});\n\nconst mailOptions = {\n    from: \"mpq.lpaboard@mitchellplastics.com\", \n    to: 'ian.barcenas@mitchellplastics.com',\n    subject: \"Reporte Semanal Tablero LPA\",\n    html: msg.payload\n};\n\n\nnode.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\ntransporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\nreturn null; \n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 1140,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-envelope"
+    },
+    {
+        "id": "52c1000b6504f2cd",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "calcular FIN DE MES",
+        "func": "var now = new Date()\nvar futuro = new Date()\nfuturo.setDate(now.getDate() + 7)\nconsole.log(futuro)\n\nif(futuro.getMonth() == now.getMonth()){\n    msg.flag = 0\n} else {\n    msg.flag = 1\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "055bc07cb67820ad"
+            ]
+        ]
+    },
+    {
+        "id": "055bc07cb67820ad",
+        "type": "switch",
+        "z": "1af512e888b131db",
+        "name": "",
+        "property": "flag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 360,
+        "wires": [
+            [
+                "1ecd794bde7ec9d8"
+            ]
+        ]
+    },
+    {
+        "id": "2fedf8854c94bd44",
+        "type": "comment",
+        "z": "1af512e888b131db",
+        "name": "Flujos para enviar reportes de registros a correos",
+        "info": "",
+        "x": 200,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1ff4f89c41dcbaaa",
+        "type": "comment",
+        "z": "1af512e888b131db",
+        "name": "¿AGREGAR USUARIO?",
+        "info": "Para agregar un usuario solo debes ir a \n[pgAdmin4](http://192.168.250.201:5050/browser/), \nbuscar la tabla _auditores_ y agregar los atributos\nque se piden, sino se agrega algún atributo, la base de \ndatos está programada para generar ciertos valores por \ndefecto para evitar errores, pero algunas funciones de este \nprograma podrían fallar con ese auditor.",
+        "x": 130,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "0aafe835217ca7b7",
+        "type": "comment",
+        "z": "1af512e888b131db",
+        "name": "USUARIOS DB",
+        "info": "Procure, por seguridad, siempre usar al usuario **node-red**\ndentro de los flujos para hacer operaciones en la base de datos.\nEste usuario tiene los permisos para agregar, leer y actualizar datos,\npero no puede eliminar nada.",
+        "x": 340,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "f83ed13062c092ce",
+        "type": "comment",
+        "z": "1af512e888b131db",
+        "name": "DESHABILITAR",
+        "info": "Si es necesario hacer cambios, se recomienda que se\ndeshabiliten los flows que se estén modificando. Si el \ncódigo no se va a volver a usar recomiendo deshabilitar el\nflujo y renombrarlo a \"Deprecated\". Solo da click izquierdo\nen la pestaña del flow y da click en \"disable\".",
+        "x": 520,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "6d041e342b225f5f",
+        "type": "postgresql",
+        "z": "1af512e888b131db",
+        "name": "Auditoria",
+        "query": "INSERT INTO registros(identificador, nombre, fecha, diasemana)\nVALUES(\n{{{msg.id}}},\n(SELECT nombre FROM auditores WHERE identificador = {{{msg.id}}}),\nNOW(),\nEXTRACT(DOW FROM NOW())\n);",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 420,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca7bc3b737b07170",
+        "type": "postgresql",
+        "z": "1af512e888b131db",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_all",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "b31091bdbba59ae2"
+            ]
+        ]
+    },
+    {
+        "id": "1ecd794bde7ec9d8",
+        "type": "postgresql",
+        "z": "1af512e888b131db",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_mes",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 700,
+        "y": 360,
+        "wires": [
+            [
+                "4126af87c1cd8011"
+            ]
+        ]
+    },
+    {
+        "id": "a0b6faf938321248",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "matching REGISTROS",
+        "func": "let registros = msg.payload;\nvar hoy = new Date();\nlet total = 0;\nlet htmlMensaje2 = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>Juventino Morales</b>. </p>\n                    <br>\n                    <p>No se ha encontrado registro de la auditoría del mes de <b>AAA</b> en el tablero LPA aún. \n                    Le recomendamos realizar la auditoría y hacer el registro lo antes posible.</p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>`\nmsg.payload = htmlMensaje2;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "fa582c55bbbde052"
+            ]
+        ]
+    },
+    {
+        "id": "7eaa7bf02cfafa2b",
+        "type": "inject",
+        "z": "1af512e888b131db",
+        "name": "18:00 Envio Diario",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 18 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "a0b6faf938321248"
+            ]
+        ]
+    },
+    {
+        "id": "fa582c55bbbde052",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "enviar CORREO P",
+        "func": "/*********************************************************************\nPor IAN LUIS BARCENAS MORENO amorosamente para mitchi: IanDeidad en github\nhttps://github.com/IanDeidad\n\nEste codigo se divide en dos partes, la primera genera el correo electronico\nalmacenando el mensaje en una cadena de texto estructurada con la sintaxis de\nHTML para formar el formato del cuerpo del correo (colores, tamanos de fuente etc.)\n\nPARA QUE EL CODIGO FUNCIONE:\nEs necesario ir al apartado de configuracion e importar la libreria de \nNode.js nodemail. De ahi que sea necesario usar este nodo y NOO el de email normal\nque se instala en los pallets de node-red como en el flujo deprecated de este programa\n\nSe debe instalar con node.js con el comando:\n\nnpm install nodemail \n\nEN LA DIRECCION donde esta node-red instalado. Suele estar como archivo oculto .node-red\nen el usuario de la raspberry.\n\n********************************************************************\n/*-------------------------- Conexion con servidor y envio con SMTP ----------------------------------------------------------------------------- */\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1,\n    host: \"smtp.gmail.com\", \n    port: 465,\n        secure: true,             // true para 465, false para otros\n    auth: {\n        user: \"trackingmpq.400@gmail.com\",\n        pass: \"jjjrxrrwofydvvvn\"\n    },           \n    connectionTimeout: 1000000, \n    greetingTimeout: 1000000,   \n    timeout: 1000000, \n});\n\nconst mailOptions = {\n    from: \"trackingmpq.400@gmail.com\", \n    to: 'trackingmpq.400@gmail.com',\n    subject: \"Recordatorio LPA Insano\",\n    html: msg.payload\n};\n\n\nnode.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\ntransporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\nreturn null; \n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 550,
+        "y": 440,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-envelope"
+    },
+    {
+        "id": "5767a380ba043489",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "enviar CORREO P",
+        "func": "/*********************************************************************\nPor IAN LUIS BARCENAS MORENO amorosamente para mitchi: IanDeidad en github\nhttps://github.com/IanDeidad\n\nEste codigo se divide en dos partes, la primera genera el correo electronico\nalmacenando el mensaje en una cadena de texto estructurada con la sintaxis de\nHTML para formar el formato del cuerpo del correo (colores, tamanos de fuente etc.)\n\nPARA QUE EL CODIGO FUNCIONE:\nEs necesario ir al apartado de configuracion e importar la libreria de \nNode.js nodemail. De ahi que sea necesario usar este nodo y NOO el de email normal\nque se instala en los pallets de node-red como en el flujo deprecated de este programa\n\nSe debe instalar con node.js con el comando:\n\nnpm install nodemail \n\nEN LA DIRECCION donde esta node-red instalado. Suele estar como archivo oculto .node-red\nen el usuario de la raspberry.\n\n********************************************************************\n/*-------------------------- Conexion con servidor y envio con SMTP ----------------------------------------------------------------------------- */\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1,\n    host: \"smtp.gmail.com\", \n    port: 465,\n        secure: true,             // true para 465, false para otros\n    auth: {\n        user: \"trackingmpq.400@gmail.com\",\n        pass: \"jjjrxrrwofydvvvn\"\n    },           \n    connectionTimeout: 1000000, \n    greetingTimeout: 1000000,   \n    timeout: 1000000, \n});\n\nconst mailOptions = {\n    from: \"trackingmpq.400@gmail.com\", \n    to: 'trackingmpq.400@gmail.com',\n    subject: \"Recordatorio LPA Insano\",\n    html: msg.payload\n};\n\n\nnode.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\ntransporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\nreturn null; \n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 1050,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-envelope"
+    },
+    {
+        "id": "5ccb250d567243e6",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "matching REGISTROS table version",
+        "func": "let registros = msg.payload.registros;\nlet tabladia = msg.payload.tabladia;\nvar hoy = new Date();\nvar pasado = new Date()\npasado = pasado.setDate(hoy.getDate() - 5)\nvar pasado_formato = new Date(pasado)\nlet htmlMensaje2\nlet htmlMensaje3\nlet total = 0;\nconst htmlFIN =             \n` \n    </body >\n</html >\n`\nlet htmlPE = env.get(\"htmlPE\");\nlet htmlQE = env.get(\"htmlQE\")\nlet htmlPAINT = env.get(\"htmlPAINT\")\nlet htmlRH = env.get(\"htmlRH\")\nlet htmlSHIPPING = env.get(\"htmlSHIPPING\")\nlet htmlCUSTOMER = env.get(\"htmlCUSTOMER\")\nlet htmlSHIFT = env.get(\"htmlSHIFT\")\nlet htmlPT = env.get(\"htmlPT\")\nlet htmlOJT = env.get(\"htmlOJT\")\nlet htmlMANAGERS = env.get(\"htmlMANAGERS\")\nlet colorLunesJE \nlet colorMartesJE \nlet colorMiercolesJE\nlet colorJuevesJE\nlet colorViernesJE \nlet colorLunesOS\nlet colorMartesOS\nlet colorMiercolesOS\nlet colorJuevesOS\nlet colorViernesOS\nlet colorLunesAD \nlet colorMartesAD \nlet colorMiercolesAD \nlet colorJuevesAD\nlet colorViernesAD \nlet JEflag = false;\nlet OSflag = false;\nlet ADflag = false;\nvar JERegistros = 0;\nvar OSRegistros = 0;\nlet ADRegistros = 0;\nlet auditoresPares = ['Anahi Aguilar', 'Diego Mandujano', 'Scott Coulter', 'Omar Sanchez', 'Jonathan Kebick', 'Eduardo Pinto']\n\nfunction htmlLLENADO\n(\nnombre,\nregistros, \nmaximo, \ncolorLunes, colorMartes, colorMiercoles, colorJueves, colorViernes, \ninclusionLunes, inclusionMartes, inclusionMiercoles, inclusionJueves, inclusionViernes\n)\n{\n    let html = `\n            <tr style=\"border: 1px solid #dddddd;\">\n                <td style=\"border: 1px solid #dddddd; background-color: #B1D3E6;\">${nombre} : <span style=\"color: ${registros >= maximo ? 'green' : 'red'};\">${registros} / ${maximo}</span></td>\n                <td style=\"border: 1px solid #dddddd; background-color: ${colorLunes};\">${inclusionLunes}</td>\n                <td style=\"border: 1px solid #dddddd; background-color: ${colorMartes};\">${inclusionMartes}</td>\n                <td style=\"border: 1px solid #dddddd; background-color: ${colorMiercoles};\">${inclusionMiercoles}</td>\n                <td style=\"border: 1px solid #dddddd; background-color: ${colorJueves};\">${inclusionJueves}</td>\n                <td style=\"border: 1px solid #dddddd; background-color: ${colorViernes};\">${inclusionViernes}</td>\n            </tr>\n        `\n    return html\n}\n\nfor (let index = 0; index < registros.length; index++) {\n    let registroEncontrado = registros[index];\n    let diasAuditoria = registros[index].dias.split(',');\n\n    diasAuditoria = diasAuditoria.map(texto => texto.trim());\n\n    let colorLunes = (tabladia.some(registro => registro.nombre == registroEncontrado.nombre && registro.diasemana == 1)) ? \"#2ecc71\" : \n    (diasAuditoria.includes('1') == false) ? '#cfd1c9':\n    \"#e74c3c\"\n    let colorMartes = (tabladia.some(registro => registro.nombre == registroEncontrado.nombre && registro.diasemana == 2)) ? \"#2ecc71\" : \n    (diasAuditoria.includes('2') == false) ? '#cfd1c9':\n    \"#e74c3c\"\n    let colorMiercoles = (tabladia.some(registro => registro.nombre == registroEncontrado.nombre && registro.diasemana == 3)) ? \"#2ecc71\" : \n    (diasAuditoria.includes('3') == false) ? '#cfd1c9':\n    \"#e74c3c\"\n    let colorJueves = (tabladia.some(registro => registro.nombre == registroEncontrado.nombre && registro.diasemana == 4)) ? \"#2ecc71\" : \n    (diasAuditoria.includes('4') == false) ? '#cfd1c9':\n    \"#e74c3c\"\n    let colorViernes = (tabladia.some(registro => registro.nombre == registroEncontrado.nombre && registro.diasemana == 5)) ? \"#2ecc71\" : \n    (diasAuditoria.includes('5') == false) ? '#cfd1c9':\n    \"#e74c3c\"\n\n\n    let maximo = 0;\n    let inclusionLunes = (diasAuditoria.includes('1')) ? '': 'N/S';\n    let inclusionMartes = (diasAuditoria.includes('2')) ? '': 'N/S';\n    let inclusionMiercoles = (diasAuditoria.includes('3')) ? '': 'N/S';\n    let inclusionJueves = (diasAuditoria.includes('4')) ? '': 'N/S';\n    let inclusionViernes = (diasAuditoria.includes('5')) ? '': 'N/S';\n\n\n    if(diasAuditoria == \"semanal\"){\n        maximo = 1;\n    } else {\n        maximo = diasAuditoria.length;\n    }\n\n    total += Number(registroEncontrado.registros);\n    if(registroEncontrado.nombre == 'Jonathan Kebick' || registroEncontrado.nombre == 'Eduardo Pinto'){\n        JERegistros += Number(registroEncontrado.registros); \n        if (!JEflag){\n            colorLunesJE = colorLunes\n            colorMartesJE = colorMartes\n            colorMiercolesJE = colorMiercoles\n            colorJuevesJE = colorJueves\n            colorViernesJE = colorViernes\n        }\n        JEflag =(JERegistros > 0 ) ? true: false;\n        registroEncontrado.nombre = 'Jonathan Kebick/Eduardo Pinto'\n    } else if (registroEncontrado.nombre == 'Scott Coulter' || registroEncontrado.nombre == 'Omar Sanchez'){\n        OSRegistros += Number(registroEncontrado.registros);\n        if(!OSflag){\n            colorLunesOS = colorLunes\n            colorMartesOS = colorMartes\n            colorMiercolesOS = colorMiercoles\n            colorJuevesOS = colorJueves\n            colorViernesOS = colorViernes\n        }\n        OSflag = (OSRegistros > 0) ? true : false;\n        registroEncontrado.nombre = 'Scott Coulter/Omar Sanchez'\n    } else if (registroEncontrado.nombre == 'Anahi Aguilar' || registroEncontrado.nombre == 'Diego Mandujano') {\n        ADRegistros += Number(registroEncontrado.registros);\n        if(!ADflag){\n            colorLunesAD = colorLunes\n            colorMartesAD = colorMartes\n            colorMiercolesAD = colorMiercoles\n            colorJuevesAD = colorJueves\n            colorViernesAD = colorViernes\n        }\n        ADflag = (ADRegistros > 0) ? true : false;\n        registroEncontrado.nombre = 'Anahi Aguilar/Diego Mandujano'\n    }\n    let nuevoHTML = htmlLLENADO(registroEncontrado.nombre,\n        registroEncontrado.registros,\n        maximo,\n        colorLunes,\n        colorMartes,\n        colorMiercoles,\n        colorJueves,\n        colorViernes,\n        inclusionLunes,\n        inclusionMartes,\n        inclusionMiercoles,\n        inclusionJueves,\n        inclusionViernes);\n\n    switch(registroEncontrado.departamento){\n        case \"Process Engineer\":\n            htmlPE = htmlPE + nuevoHTML;\n            break;\n\n        case \"Paint Process Engineer\":\n        case \"Paint Technician\":\n            htmlPAINT = htmlPAINT + nuevoHTML;\n            break;\n            \n        case \"ISO Coordinator\":\n        case \"Quality Engineer\":\n            htmlQE = htmlQE + nuevoHTML;\n            break;\n\n        case \"Human Resources Generalist\":\n            htmlRH = htmlRH + nuevoHTML;\n            break;\n\n        case \"Shipping and Receiving Supervisor\":\n        case \"Shipping Lead Hand\": \n            htmlSHIPPING = htmlSHIPPING + nuevoHTML;\n            break;\n\n        case \"Customer Service Representative\": \n            htmlCUSTOMER = htmlCUSTOMER + nuevoHTML;\n            break;\n\n        case \"Shift Supervisor\": \n            htmlSHIFT = htmlSHIFT + nuevoHTML;\n            break;\n\n        case \"Process Technician\": \n            htmlPT = htmlPT + nuevoHTML;\n            break;\n\n        case \"On Job Trainer\": \n            htmlOJT = htmlOJT + nuevoHTML;\n            break;\n    }\n}\n\nlet htmlINI = \n`\n<html>\n    <body>\n        <h1 style=\"color:blue;\">Reporte Semanal de Registros Tablero LPA</h1>\n        <p> Se han hecho ${total} registros en el tablero desde el <b>${pasado_formato.toLocaleDateString()}</b> hasta el \n        <b>${hoy.toLocaleDateString()}</b>. </p>\n        <p>En las siguientes tablas podrás encontrar información adicional de los registros realizados por área </p>\n        <br>\n        <p>Para interpretar las tablas, por favor siga la siguiente simbología:</p>\n        <p style=\"font-family: sans-serif; font-size: 14px; color: #334155; margin-bottom: 10px; font-weight: bold;\">\n</p>\n<ul style=\"font-family: sans-serif; font-size: 13px; color: #475569; list-style: none; padding-left: 0; margin: 0;\">\n  <li style=\"margin-bottom: 6px;\">🟢 <strong>OK</strong> : SUBMITTED</li>\n  <li style=\"margin-bottom: 6px;\">🔴 <strong>NG</strong> : MISSING</li>\n  <li style=\"margin-bottom: 0px;\">⚪ <strong>N/S</strong> : NOT SCHEDULED</li>\n</ul>\n<br>\n<br>\n        \n    </body>\n</html>\n`\nhtmlPE = htmlPE + `</table>`\nhtmlQE = htmlQE + `</table>`\nhtmlPAINT = htmlPAINT + `</table>`\nhtmlRH = htmlRH + `</table>`\nhtmlSHIPPING = htmlSHIPPING + `</table>`\nhtmlCUSTOMER = htmlCUSTOMER + `</table>`\nhtmlSHIFT = htmlSHIFT + `</table>`\nhtmlPT = htmlPT + `</table>`\nhtmlOJT = htmlOJT + `</table>`\nhtmlMANAGERS = htmlMANAGERS + htmlLLENADO('Jonathan Kebick/Eduardo Pinto',\n    JERegistros,\n    1,\n    colorLunesJE,\n    colorMartesJE,\n    colorMiercolesJE,\n    colorJuevesJE,\n    colorViernesJE,\n    '',\n    '',\n    '',\n    '',\n    ''); \nhtmlMANAGERS = htmlMANAGERS + htmlLLENADO('Scott Coulter/Omar Sanchez',\n    OSRegistros,\n    1,\n    colorLunesOS,\n    colorMartesOS,\n    colorMiercolesOS,\n    colorJuevesOS,\n    colorViernesOS,\n    '',\n    '',\n    '',\n    '',\n    ''); \nhtmlMANAGERS = htmlMANAGERS + htmlLLENADO('Anahi Aguilar/Diego Mandujano',\n    ADRegistros,\n    1,\n    colorLunesAD,\n    colorMartesAD,\n    colorMiercolesAD,\n    colorJuevesAD,\n    colorViernesAD,\n    '',\n    '',\n    '',\n    '',\n    ''); \n\nmsg.payload =htmlINI +\n htmlPE + \n `<br>` + \n htmlQE + \n `<br>` + \n htmlPAINT + \n `<br>` + \n htmlRH + \n `<br>` + \n htmlSHIPPING + \n `<br>` + \n htmlCUSTOMER + \n `<br>` + \n htmlSHIFT + \n `<br>` + \n htmlPT + \n `<br>` + \n htmlOJT + \n `<br>` +\n htmlMANAGERS +\n htmlFIN ;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 560,
+        "wires": [
+            [
+                "6dbb8dc484fdabd2"
+            ]
+        ]
+    },
+    {
+        "id": "6dbb8dc484fdabd2",
+        "type": "function",
+        "z": "1af512e888b131db",
+        "name": "enviar CORREO P",
+        "func": "/*********************************************************************\nPor IAN LUIS BARCENAS MORENO amorosamente para mitchi: IanDeidad en github\nhttps://github.com/IanDeidad\n\nEste codigo se divide en dos partes, la primera genera el correo electronico\nalmacenando el mensaje en una cadena de texto estructurada con la sintaxis de\nHTML para formar el formato del cuerpo del correo (colores, tamanos de fuente etc.)\n\nPARA QUE EL CODIGO FUNCIONE:\nEs necesario ir al apartado de configuracion e importar la libreria de \nNode.js nodemail. De ahi que sea necesario usar este nodo y NOO el de email normal\nque se instala en los pallets de node-red como en el flujo deprecated de este programa\n\nSe debe instalar con node.js con el comando:\n\nnpm install nodemail \n\nEN LA DIRECCION donde esta node-red instalado. Suele estar como archivo oculto .node-red\nen el usuario de la raspberry.\n\n********************************************************************\n/*-------------------------- Conexion con servidor y envio con SMTP ----------------------------------------------------------------------------- */\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1,\n    host: \"smtp.gmail.com\", \n    port: 465,\n        secure: true,             // true para 465, false para otros\n    auth: {\n        user: \"trackingmpq.400@gmail.com\",\n        pass: \"jjjrxrrwofydvvvn\"\n    },           \n    connectionTimeout: 1000000, \n    greetingTimeout: 1000000,   \n    timeout: 1000000, \n});\n\nconst mailOptions = {\n    from: \"trackingmpq.400@gmail.com\", \n    to: 'trackingmpq.400@gmail.com',\n    subject: \"Reporte de Registros LPA\",\n    html: msg.payload\n};\n\n\nnode.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\ntransporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\nreturn null; \n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 1230,
+        "y": 560,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-envelope"
+    },
+    {
+        "id": "e949a90ba11507eb",
+        "type": "inject",
+        "z": "1af512e888b131db",
+        "name": "18:00 Envio Diario",
+        "props": [],
+        "repeat": "",
+        "crontab": "05 18 * * 5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 560,
+        "wires": [
+            [
+                "20020df587fb27aa",
+                "66cb4027e67d6990"
+            ]
+        ]
+    },
+    {
+        "id": "20020df587fb27aa",
+        "type": "postgresql",
+        "z": "1af512e888b131db",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_semana_tabla",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "30474ec52622205f",
+                "a77c1de11eb06135"
+            ]
+        ]
+    },
+    {
+        "id": "66cb4027e67d6990",
+        "type": "postgresql",
+        "z": "1af512e888b131db",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_semana_dia",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 420,
+        "y": 620,
+        "wires": [
+            [
+                "47bd3f30874b5bcc"
+            ]
+        ]
+    },
+    {
+        "id": "47bd3f30874b5bcc",
+        "type": "change",
+        "z": "1af512e888b131db",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "tabladia",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 620,
+        "wires": [
+            [
+                "832f19ee3451d442"
+            ]
+        ]
+    },
+    {
+        "id": "832f19ee3451d442",
+        "type": "join",
+        "z": "1af512e888b131db",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 750,
+        "y": 560,
+        "wires": [
+            [
+                "5ccb250d567243e6"
+            ]
+        ]
+    },
+    {
+        "id": "30474ec52622205f",
+        "type": "change",
+        "z": "1af512e888b131db",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "registros",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 560,
+        "wires": [
+            [
+                "832f19ee3451d442"
+            ]
+        ]
+    },
+    {
+        "id": "a77c1de11eb06135",
+        "type": "debug",
+        "z": "1af512e888b131db",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "bc616247570cbf06",
+        "type": "comment",
+        "z": "1af512e888b131db",
+        "name": "Flujo para insertar nuevos datos en tabla general",
+        "info": "",
+        "x": 580,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3a8c3460b3d6863e",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "15:00 Notificaciones Juve",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 15 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 60,
+        "wires": [
+            [
+                "6f95ce7865152fb6"
+            ]
+        ]
+    },
+    {
+        "id": "6f95ce7865152fb6",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "Calcular CASO",
+        "func": "var now = new Date();\nlet proximo = new Date();\nproximo.setDate(now.getDate() + 1);\n\nif(now.getDate() == 1){\n    msg.flag = 3; // 3era Noti\n        if (now.getHours() == 15) {\n        msg.flag = 4; // 4ta Noti\n    }\n} else if(now.getMonth() != proximo.getMonth()) {\n    msg.flag = 1; // Primera noti\n    if (now.getHours() == 16) {\n        msg.flag = 2; // Segunda noti\n    }\n} else {\n    msg.flag = 0; \n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "fa70b82939432fe3"
+            ]
+        ]
+    },
+    {
+        "id": "fa70b82939432fe3",
+        "type": "switch",
+        "z": "400949ca1e2b628e",
+        "name": "",
+        "property": "flag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "41155efa1d7db855"
+            ],
+            [
+                "41155efa1d7db855"
+            ],
+            [
+                "7213ca6a51721676"
+            ],
+            [
+                "7213ca6a51721676"
+            ]
+        ]
+    },
+    {
+        "id": "ef9e631d40fedb5f",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "4to Recordatorio",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nconst month = [\"Enero\",\"Febrero\",\"Marzo\",\"Abril\",\"Mayo\",\"Junio\",\"Julio\",\"Agosto\",\"Septiembre\",\"Octubre\",\"Noviembre\",\"Diciembre\"];\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    if(registros[index].registros > 0){\n        encontrado = 1;\n        correo = '';\n    } \n\n    if(encontrado == 0){\n        correo = registros[index].email;\n           let htmlMensaje1 = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">4to Recordatorio de Auditoría Pendiente Tablero LPA </h1>\n                    <p>Muy buenas tardes <b>Juventino Morales</b>. </p>\n                    <br>\n                    <p>No se ha encontrado registro de la auditoría del mes de <b>${month[hoy.getMonth() - 1]}</b> en el tablero LPA aún. \n                    Le recomendamos realizar la auditoría y hacer el registro lo antes posible.</p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            let mailOptions = {\n            from: \"mpq.lpaboard@mitchellplastics.com\", \n            to: 'ian.barcenas@mitchellplastics.com',\n            subject: \"4to Recordatorio de Auditoría Tablero LPA\",\n            html: htmlMensaje1\n            };\n\n            node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n            await transporter.sendMail(mailOptions)\n                .then(info => {\n                    node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n                    node.send(msg);\n                })\n                .catch(error => {\n                    node.status({fill:\"red\", shape:\"ring\", text: error.message});\n                    node.error(\"Error SMTP: \" + error.message, msg);\n                });\n\n        }\n    }\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 950,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "e5fc1e6f66d90de2",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "1er Recordatorio",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nconst month = [\"Enero\",\"Febrero\",\"Marzo\",\"Abril\",\"Mayo\",\"Junio\",\"Julio\",\"Agosto\",\"Septiembre\",\"Octubre\",\"Noviembre\",\"Diciembre\"];\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    if(registros[index].registros > 0){\n        encontrado = 1;\n        correo = '';\n    } \n\n    if(encontrado == 0){\n        correo = registros[index].email;\n           let htmlMensaje1 = \n            `\n            <html>\n                <body>\n                    <h1>Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>Juventino Morales</b> </p>.\n                    <br>\n                    <p>No se ha encontrado registro de la auditoría de este mes de <b>${month[hoy.getMonth()]}</b>. \n                    Recomendamos hacerla pronto.</p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            let mailOptions = {\n            from: \"mpq.lpaboard@mitchellplastics.com\", \n            to: 'ian.barcenas@mitchellplastics.com',\n            subject: \"1er Recordatorio de Auditoría Tablero LPA\",\n            html: htmlMensaje1\n            };\n\n            node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n            await transporter.sendMail(mailOptions)\n                .then(info => {\n                    node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n                    node.send(msg);\n                })\n                .catch(error => {\n                    node.status({fill:\"red\", shape:\"ring\", text: error.message});\n                    node.error(\"Error SMTP: \" + error.message, msg);\n                });\n\n        }\n    }\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 950,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "62178cd5c5195641",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "Primer día del mes 4to",
+        "info": "",
+        "x": 1160,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "07b7aac6e92bdac3",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "Último día del mes 1er",
+        "info": "",
+        "x": 1160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "abda3aa7e9e1aed7",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "16:30 Notificaciones Juve",
+        "props": [],
+        "repeat": "",
+        "crontab": "30 16 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "6f95ce7865152fb6"
+            ]
+        ]
+    },
+    {
+        "id": "cd2e43ed472134b7",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "2do Recordatorio",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nconst month = [\"Enero\",\"Febrero\",\"Marzo\",\"Abril\",\"Mayo\",\"Junio\",\"Julio\",\"Agosto\",\"Septiembre\",\"Octubre\",\"Noviembre\",\"Diciembre\"];\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    if(registros[index].registros > 0){\n        encontrado = 1;\n        correo = '';\n    } \n\n    if(encontrado == 0){\n        correo = registros[index].email;\n           let htmlMensaje1 = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:yellow;\">2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>Juventino Morales</b> </p>.\n                    <br>\n                    <p>Todavía no se ha encontrado registro de la auditoría de este mes de <b>${month[hoy.getMonth()]}</b> en el tablero\n                    LPA. Este es un amable recordatorio de que pronto acabará el mes. \n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            let mailOptions = {\n            from: \"mpq.lpaboard@mitchellplastics.com\", \n            to: 'ian.barcenas@mitchellplastics.com',\n            subject: \"2do Recordatorio de Auditoría Tablero LPA\",\n            html: htmlMensaje1\n            };\n\n            node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n            await transporter.sendMail(mailOptions)\n                .then(info => {\n                    node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n                    node.send(msg);\n                })\n                .catch(error => {\n                    node.status({fill:\"red\", shape:\"ring\", text: error.message});\n                    node.error(\"Error SMTP: \" + error.message, msg);\n                });\n\n        }\n    }\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 950,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "8eeee67930e64ffd",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "Último día del mes 2do",
+        "info": "",
+        "x": 1160,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9a843dd9043b2a5d",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "08:00 Notificaciones Juve",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 08 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "6f95ce7865152fb6"
+            ]
+        ]
+    },
+    {
+        "id": "fd04e155a960cf2e",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "3er Recordatorio",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nconst month = [\"Enero\",\"Febrero\",\"Marzo\",\"Abril\",\"Mayo\",\"Junio\",\"Julio\",\"Agosto\",\"Septiembre\",\"Octubre\",\"Noviembre\",\"Diciembre\"];\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    if(registros[index].registros > 0){\n        encontrado = 1;\n        correo = '';\n    } \n\n    if(encontrado == 0){\n        correo = registros[index].email;\n           let htmlMensaje1 = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">3er Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>Juventino Morales</b>. </p>\n                    <br>\n                    <p>La auditoría del mes pasado de <b>${month[hoy.getMonth() - 1]}</b> no se encuentra\n                    registrada en el tablero LPA. Sugerimos que realice el registro pendiente lo antes posible.\n                    Si hay algún problema respecto al registro, no dude en notificarlo al área de automatización. \n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            let mailOptions = {\n            from: \"mpq.lpaboard@mitchellplastics.com\", \n            to: 'ian.barcenas@mitchellplastics.com',\n            subject: \"3er Recordatorio de Auditoría Tablero LPA\",\n            html: htmlMensaje1\n            };\n\n            node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n            await transporter.sendMail(mailOptions)\n                .then(info => {\n                    node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n                    node.send(msg);\n                })\n                .catch(error => {\n                    node.status({fill:\"red\", shape:\"ring\", text: error.message});\n                    node.error(\"Error SMTP: \" + error.message, msg);\n                });\n\n        }\n    }\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 950,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "44cb264a699c79f6",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "Primer día del mes 3er",
+        "info": "",
+        "x": 1160,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a2be5cfad2f21790",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "Enviar Recordatorios",
+        "func": "let registros = msg.payload;\nlet correo = '';\nlet asunto = '1er Recordatorio de Auditoría Semanal Tablero LPA'\nvar hoy = new Date();\nvar pasado = new Date()\npasado = pasado.setDate(hoy.getDate() - 4)\nlet segNotiFlag = 0;\nvar pasado_formato = new Date(pasado)\nvar ADflag = 0; //Anahi-Diego flag\nvar JEflag = 0; // Jonathan-Pinto flag \nvar OSflag = 0; // Omar-Scott flag\nvar JERegistros = 0;\nvar OSRegistros = 0;\nvar ADRegistros = 0;\nconst htmlAD = env.get('htmlAD');\nconst htmlOS = env.get('htmlOS');\nconst htmlJE =env.get('htmlJE');\nconst htmlADSegNoti = env.get('htmlADSegNoti')\nconst htmlOSSegNoti = env.get('htmlOSSegNoti')\nconst htmlJESegNoti = env.get('htmlJESegNoti')\n\nasync function enviarEmail(mensaje, correo, asunto){\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1, \n        host: \"esai-mpq.mitchellplastics.com\", \n        port: 25,\n        secure: false,\n        ignoreTLS: true,\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n        tls: {\n            rejectUnauthorized: false\n        }\n    });\n    let mailOptions = {\n        from: correo,\n        to: correo,\n        subject: asunto,\n        html: mensaje\n    };\n    await transporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\n}\n\nif(hoy.getHours() >= 16){\n    segNotiFlag = 1;\n}\nlet auditoresPares = ['Scott Coulter', 'Omar Sanchez', 'Jonathan Kebick', 'Eduardo Pinto', 'Anahi Aguilar', 'Diego Mandujano']\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index];\n\n    if(registroEncontrado.registros > 0){\n        if(registroEncontrado.nombre == 'Jonathan Kebick' || registroEncontrado.auditor == 'Eduardo Pinto'){ \n            JEflag = 1;\n        } else if (registroEncontrado.nombre == 'Scott Coulter' || registroEncontrado.auditor == 'Omar Sanchez'){\n            OSflag = 1;\n        } else if (registroEncontrado.nombre == 'Anahi Aguilar' || registroEncontrado.auditor == 'Diego Mandujano'){\n            ADflag = 1;\n        } else{\n        encontrado = 1;\n        } \n    }\n    if(encontrado == 0 && !(auditoresPares.includes(registros[index].nombre))){\n        //correo = registros[index].email\n        correo = 'trackingmpq.400@gmail.com'\n        asunto = '1er Recordatorio de Auditoría Semanal Tablero LPA'\n        let htmlNormal = `\n            <html>\n                <body>\n                    <h1>1er Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre}</b>. </p>\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de su auditoría semanal en el tablero LPA.\n                    Recomendamos hacer el registro de la auditoría de esta semana antes de que acabe el día.\n                    </p> \n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n        if(hoy.getHours() == 16){\n            //correo = [registros[index].email, registros[index].jefeEmail];\n            correo = 'ianluisbm@gmail.com'\n            asunto = '2do Recordatorio de Auditoría Semanal Tablero LPA';\n            htmlNormal = `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre} y ${registros[index].jefe}</b> </p>.\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de la auditoría semanal del usuario en el tablero LPA.\n                    Recomendamos hacer el registro de la auditoría de esta semana antes de que acabe el día. Si hay algún problema\n                    por el cual no haya podido hacerlo, por favor, notifiquenlo. \n                    </p> \n                    <p>\n                    Este correo no debería enviarse si el usuario ${registros[index].nombre} realizó su auditoría a tiempo.\n                    Si esto no funcionó así, es importante notificarlo.\n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n        }\n        enviarEmail(htmlNormal, correo, asunto);\n    }\n}\nif(JEflag == 0 && segNotiFlag == 1){ \n    enviarEmail(\n        htmlJESegNoti,\n        ['eduardo.pinto@mitchellplastics.com', \n        'jonathan.kebick@mitchellplastics.com', \n        'juventino.morales@mitchellplastics.com'],\n        \"2do Recordatorio de Auditoría Semanal Tablero LPA\",\n    )\n} else if(JEflag == 0){\n        enviarEmail(\n        htmlJE,\n        ['eduardo.pinto@mitchellplastics.com', \n        'jonathan.kebick@mitchellplastics.com'],\n        \"1er Recordatorio de Auditoría Semanal Tablero LPA\",\n    )\n}\nif (OSflag == 0 && segNotiFlag == 1){\n    enviarEmail(\n        htmlOSSegNoti,\n        ['omar.sanchez@mitchellplastics.com', \n        'scott.coulter@mitchellplastics.com',\n        'juventino.morales@mitchellplastics.com'],\n        \"2do Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n}else if (OSflag == 0){\n    enviarEmail(\n        htmlOS,\n        ['omar.sanchez@mitchellplastics.com',\n        'scott.coulter@mitchellplastics.com'],\n        \"1er Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n} \nif (ADflag == 0 && segNotiFlag == 1) {\n    enviarEmail(\n        htmlADSegNoti,\n        ['anahi.aguilar@mitchellplastics.com', \n        'diego.mandujano@mitchellplastics.com',\n        'jonathan.kebick@mitchellplastics.com'],\n        \"2do Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n} else if (ADflag == 0){\n    enviarEmail(\n        htmlAD,\n        ['anahi.aguilar@mitchellplastics.com',\n        'diego.mandujano@mitchellplastics.com'],\n        \"1er Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n}\n\nJEflag = 0;\nOSflag = 0;\nADflag = 0;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 680,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "651828ad1a8a6f35",
+        "type": "postgresql",
+        "z": "400949ca1e2b628e",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_managers",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "a2be5cfad2f21790",
+                "6faba057dd9abc8b"
+            ]
+        ]
+    },
+    {
+        "id": "8a30f22a20980e61",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "15:00 Notificaciones Semanales",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 15 * * 5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "651828ad1a8a6f35"
+            ]
+        ]
+    },
+    {
+        "id": "41155efa1d7db855",
+        "type": "postgresql",
+        "z": "400949ca1e2b628e",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_mes",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 740,
+        "y": 60,
+        "wires": [
+            [
+                "e5fc1e6f66d90de2",
+                "cd2e43ed472134b7"
+            ]
+        ]
+    },
+    {
+        "id": "7213ca6a51721676",
+        "type": "postgresql",
+        "z": "400949ca1e2b628e",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_mes",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 740,
+        "y": 140,
+        "wires": [
+            [
+                "ef9e631d40fedb5f",
+                "fd04e155a960cf2e"
+            ]
+        ]
+    },
+    {
+        "id": "ed14dbe2dc5adbc3",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "16:30 Notificaciones Semanales",
+        "props": [],
+        "repeat": "",
+        "crontab": "30 16 * * 5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "651828ad1a8a6f35"
+            ]
+        ]
+    },
+    {
+        "id": "34f835efb0a40c87",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "Enviar Recordatorios ",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nvar pasado = new Date()\n\nasync function enviarEmail(mensaje, correo, asunto){\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1, \n        host: \"esai-mpq.mitchellplastics.com\", \n        port: 25,\n        secure: false,\n        ignoreTLS: true,\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n        tls: {\n            rejectUnauthorized: false\n        }\n    });\n    let mailOptions = {\n        from: \"mpq.lpaboard@mitchellplastics.com\",\n        to: correo,\n        subject: asunto,\n        html: mensaje\n    };\n    await transporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\n}\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index];\n\n    if(registroEncontrado.registros > 0){\n        encontrado = 1;\n    }\n    if(encontrado == 0){\n        let diasAuditoria = registros[index].dias.split(',');\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay());\n        let asunto = \"1er Recordatorio de Auditoría Diaria Tablero LPA\";\n\n        if((hoy.getHours() == 16) && tocaDia != undefined){\n            correo = [registros[index].email, registros[index].jefeEmail]\n            asunto = \"2do Recordatorio de Auditoría Diaria Tablero LPA\"\n            let htmlSup = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre} y ${registros[index].jefe}</b>. </p>\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b> \n                    del usuario <b>${registros[index].nombre}</b>.\n                    Recomendamos que se haga el registro antes de que termine el día. \n                    </p> \n                    <p>\n                    Este correo no debería enviarse si hoy no le toca auditoría al usuario, de haber un problema, es importante notificarlo.\n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            enviarEmail(htmlSup, correo, asunto);    \n        }else if(tocaDia != undefined){\n            correo = registros[index].email\n            asunto = \"1er Recordatorio de Auditoría Diaria Tablero LPA\"\n            let htmlNormal = `\n                <html>\n                    <body>\n                        <h1>1er Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                        <p>Muy buenas tardes <b>${registros[index].nombre}</b>. </p>\n                        <br>\n                        <p>\n                        Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b>.\n                        Recomendamos hacer el registro de la auditoría de hoy antes de que acabé el día. \n                        </p> \n                        <p>\n                        Este correo no debería enviarse si hoy no te toca hacer auditoría, de haber un problema, es importante notificarlo.\n                        </p>\n                        <br>\n                        <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                        de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                        <br>\n                        <p><b>Saludos</b></p>\n                    </body>\n                </html>\n            `;\n            enviarEmail(htmlNormal, correo, asunto);    \n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 620,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "18daf381011e1b65",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "15:00 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 15 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 340,
+        "wires": [
+            [
+                "656226fe2e805af4"
+            ]
+        ]
+    },
+    {
+        "id": "9192efc72ce71487",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "16:30 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "30 16 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "656226fe2e805af4"
+            ]
+        ]
+    },
+    {
+        "id": "656226fe2e805af4",
+        "type": "postgresql",
+        "z": "400949ca1e2b628e",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM \"v_registros_NoProduction\"",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 400,
+        "y": 360,
+        "wires": [
+            [
+                "34f835efb0a40c87"
+            ]
+        ]
+    },
+    {
+        "id": "22051f86b9cb0dc8",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "QE, HR, PAINT, CUSTOMER, PE",
+        "info": "Distinguimos entre usuarios de registros \ndiarios con horario administrativo de los que \n",
+        "x": 870,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "648e2bfd85db7737",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "Enviar Recordatorios ",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nvar pasado = new Date()\nasync function enviarEmail(mensaje, correo, asunto){\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1, \n        host: \"esai-mpq.mitchellplastics.com\", \n        port: 25,\n        secure: false,\n        ignoreTLS: true,\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n        tls: {\n            rejectUnauthorized: false\n        }\n    });\n    let mailOptions = {\n        from: \"mpq.lpaboard@mitchellplastics.com\",\n        to: correo,\n        subject: asunto,\n        html: mensaje\n    };\n    await transporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n}\n\nlet auditoresPares = ['Scott Coulter', 'Omar Sanchez', 'Jonathan Kebick', 'Eduardo Pinto', 'Anahi Aguilar', 'Diego Mandujano']\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index];\n\n    if(registroEncontrado.registros > 0){\n        encontrado = 1;\n    }\n    if(encontrado == 0){\n        let diasAuditoria = registros[index].dias.split(',');\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay())\n        let asunto = \"1er Recordatorio de Auditoría Diaria Tablero LPA\"\n\n        correo = registros[index].email;\n\n        if((hoy.getHours() == 13 ||  hoy.getHours() == 21 || hoy.getHours() == 5) && tocaDia != undefined){\n            correo = [registros[index].jefeEmail, registros[index].email];\n            asunto = \"2do Recordatorio de Auditoría Diaria Tablero LPA\"\n            let htmlSup = `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\"> 2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre} y ${registros[index].jefe}</b>. </p>\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b> \n                    del usuario <b>${registros[index].nombre}</b>.\n                    Recomendamos que se haga el registro antes de que termine el día. \n                    </p> \n                    <p>\n                    Este correo no debería enviarse si hoy no le toca auditoría al usuario, de haber un problema, es importante notificarlo.\n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            enviarEmail(htmlSup, correo, asunto);    \n        }else if(tocaDia != undefined){\n            correo = registros[index].email;\n            let htmlNormal = `\n                <html>\n                    <body>\n                        <h1>1er Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                        <p>Muy buenas tardes <b>${registros[index].nombre}</b>. </p>\n                        <br>\n                        <p>\n                        Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b>.\n                        Recomendamos hacer el registro de la auditoría de hoy antes de que acabé el día. \n                        </p> \n                        <p>\n                        Este correo no debería enviarse si hoy no te toca hacer auditoría, de haber un problema, es importante notificarlo.\n                        </p>\n                        <br>\n                        <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                        de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                        <br>\n                        <p><b>Saludos</b></p>\n                    </body>\n                </html>\n            `;\n            enviarEmail(htmlNormal, correo, asunto);    \n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 680,
+        "y": 540,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "aab5c4192babe9e1",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "12:00 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 12 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 440,
+        "wires": [
+            [
+                "3081a65d469e5b1b"
+            ]
+        ]
+    },
+    {
+        "id": "0fc8d7f8fc41ca95",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "20:00 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 20 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "3081a65d469e5b1b"
+            ]
+        ]
+    },
+    {
+        "id": "e7fe366433a49d2c",
+        "type": "postgresql",
+        "z": "400949ca1e2b628e",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM \"v_registros_YesProduction\"",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 460,
+        "y": 540,
+        "wires": [
+            [
+                "648e2bfd85db7737"
+            ]
+        ]
+    },
+    {
+        "id": "c775df3f117da9ea",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "13:30 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "30 13 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "3081a65d469e5b1b"
+            ]
+        ]
+    },
+    {
+        "id": "affcbfa65b84564d",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "21:30 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 20 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "3081a65d469e5b1b"
+            ]
+        ]
+    },
+    {
+        "id": "89036c8c321759ae",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "Produccion, PT, OJT",
+        "info": "",
+        "x": 890,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6a53b1145fb056f5",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "04:00 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 04 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 600,
+        "wires": [
+            [
+                "3081a65d469e5b1b"
+            ]
+        ]
+    },
+    {
+        "id": "0a6c42c842a785d8",
+        "type": "inject",
+        "z": "400949ca1e2b628e",
+        "name": "05:30 Notificaciones Diarias",
+        "props": [],
+        "repeat": "",
+        "crontab": "30 05 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 640,
+        "wires": [
+            [
+                "3081a65d469e5b1b"
+            ]
+        ]
+    },
+    {
+        "id": "e22371eee1071dc1",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "Managers",
+        "info": "",
+        "x": 880,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b0a940a54396a4a1",
+        "type": "comment",
+        "z": "400949ca1e2b628e",
+        "name": "Flujos para notificaciones a los usuarios",
+        "info": "",
+        "x": 190,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "6faba057dd9abc8b",
+        "type": "debug",
+        "z": "400949ca1e2b628e",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "17af32dc26248e5c",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "Enviar Recordatorios P",
+        "func": "let registros = msg.payload;\nlet correo = '';\nlet asunto = '1er Recordatorio de Auditoría Semanal Tablero LPA'\nvar hoy = new Date();\nvar pasado = new Date()\npasado = pasado.setDate(hoy.getDate() - 4)\nlet segNotiFlag = 0;\nvar pasado_formato = new Date(pasado)\nvar ADflag = 0; //Anahi-Diego flag\nvar JEflag = 0; // Jonathan-Pinto flag \nvar OSflag = 0; // Omar-Scott flag\nvar JERegistros = 0;\nvar OSRegistros = 0;\nvar ADRegistros = 0;\nconst htmlAD = env.get('htmlAD');\nconst htmlOS = env.get('htmlOS');\nconst htmlJE =env.get('htmlJE');\nconst htmlADSegNoti = env.get('htmlADSegNoti')\nconst htmlOSSegNoti = env.get('htmlOSSegNoti')\nconst htmlJESegNoti = env.get('htmlJESegNoti')\n\nasync function enviarEmail(mensaje, correo, asunto){\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1,\n        host: \"smtp.gmail.com\",\n        port: 465,\n        secure: true,             // true para 465, false para otros\n        auth: {\n            user: \"trackingmpq.400@gmail.com\",\n            pass: \"jjjrxrrwofydvvvn\"\n        },\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n    });\n    /*\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1, \n        host: \"esai-mpq.mitchellplastics.com\", \n        port: 25,\n        secure: false,\n        ignoreTLS: true,\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n        tls: {\n            rejectUnauthorized: false\n        }\n    });\n    */\n    let mailOptions = {\n        from: correo,\n        to: correo,\n        subject: asunto,\n        html: mensaje\n    };\n    await transporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\n}\n\nif(hoy.getHours() >= 16){\n    segNotiFlag = 1;\n}\nlet auditoresPares = ['Scott Coulter', 'Omar Sanchez', 'Jonathan Kebick', 'Eduardo Pinto', 'Anahi Aguilar', 'Diego Mandujano']\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index];\n\n    if(registroEncontrado.registros > 0){\n        if(registroEncontrado.nombre == 'Jonathan Kebick' || registroEncontrado.auditor == 'Eduardo Pinto'){ \n            JEflag = 1;\n        } else if (registroEncontrado.nombre == 'Scott Coulter' || registroEncontrado.auditor == 'Omar Sanchez'){\n            OSflag = 1;\n        } else if (registroEncontrado.nombre == 'Anahi Aguilar' || registroEncontrado.auditor == 'Diego Mandujano'){\n            ADflag = 1;\n        } else{\n        encontrado = 1;\n        } \n    }\n    if(encontrado == 0 && !(auditoresPares.includes(registros[index].nombre))){\n        //correo = registros[index].email\n        correo = 'trackingmpq.400@gmail.com'\n        asunto = '1er Recordatorio de Auditoría Semanal Tablero LPA'\n        let htmlNormal = `\n            <html>\n                <body>\n                    <h1>Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre}</b>. </p>\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de su auditoría semanal en el tablero LPA.\n                    Recomendamos hacer el registro de la auditoría de esta semana antes de que acabe el día.\n                    </p> \n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n        if(hoy.getHours() == 16){\n            //correo = [registros[index].email, registros[index].jefeEmail];\n            correo = 'ianluisbm@gmail.com'\n            asunto = '2do Recordatorio de Auditoría Semanal Tablero LPA';\n            htmlNormal = `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre} y ${registros[index].jefe}</b> </p>.\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de la auditoría semanal del usuario en el tablero LPA.\n                    Recomendamos hacer el registro de la auditoría de esta semana antes de que acabe el día. Si hay algún problema\n                    por el cual no haya podido hacerlo, por favor, notifiquenlo. \n                    </p> \n                    <p>\n                    Este correo no debería enviarse si el usuario ${registros[index].nombre} realizó su auditoría a tiempo.\n                    Si esto no funcionó así, es importante notificarlo.\n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n        }\n        enviarEmail(htmlNormal, correo, asunto);\n    }\n}/*\nif(JEflag == 0 && segNotiFlag == 1){ \n    enviarEmail(\n        htmlJESegNoti,\n        ['eduardo.pinto@mitchellplastics.com', \n        'jonathan.kebick@mitchellplastics.com', \n        'juventino.morales@mitchellplastics.com'],\n        \"2do Recordatorio de Auditoría Semanal Tablero LPA\",\n    )\n} else if(JEflag == 0){\n        enviarEmail(\n        htmlJE,\n        ['eduardo.pinto@mitchellplastics.com', \n        'jonathan.kebick@mitchellplastics.com'],\n        \"1er Recordatorio de Auditoría Semanal Tablero LPA\",\n    )\n}\nif (OSflag == 0 && segNotiFlag == 1){\n    enviarEmail(\n        htmlOSSegNoti,\n        ['omar.sanchez@mitchellplastics.com', \n        'scott.coulter@mitchellplastics.com',\n        'juventino.morales@mitchellplastics.com'],\n        \"2do Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n}else if (OSflag == 0){\n    enviarEmail(\n        htmlOS,\n        ['omar.sanchez@mitchellplastics.com',\n        'scott.coulter@mitchellplastics.com'],\n        \"1er Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n} \nif (ADflag == 0 && segNotiFlag == 1) {\n    enviarEmail(\n        htmlADSegNoti,\n        ['anahi.aguilar@mitchellplastics.com', \n        'diego.mandujano@mitchellplastics.com',\n        'jonathan.kebick@mitchellplastics.com'],\n        \"2do Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n} else if (ADflag == 0){\n    enviarEmail(\n        htmlAD,\n        ['anahi.aguilar@mitchellplastics.com',\n        'diego.mandujano@mitchellplastics.com'],\n        \"1er Recordatorio de Auditoría Semanal Tablero LPA\"\n    )\n}\n*/\nJEflag = 0;\nOSflag = 0;\nADflag = 0;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 790,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "9cae5e2638b54a22",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "Enviar Recordatorios P",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nvar pasado = new Date()\n\nasync function enviarEmail(mensaje, correo, asunto){\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1,\n        host: \"smtp.gmail.com\",\n        port: 465,\n        secure: true,             // true para 465, false para otros\n        auth: {\n            user: \"trackingmpq.400@gmail.com\",\n            pass: \"jjjrxrrwofydvvvn\"\n        },\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n    });\n    /*\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1, \n        host: \"esai-mpq.mitchellplastics.com\", \n        port: 25,\n        secure: false,\n        ignoreTLS: true,\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n        tls: {\n            rejectUnauthorized: false\n        }\n    });\n    */\n    let mailOptions = {\n        from: \"'trackingmpq.400@gmail.com'\",\n        to: correo,\n        subject: asunto,\n        html: mensaje\n    };\n    await transporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\n}\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index];\n\n    if(registroEncontrado.registros > 0){\n        encontrado = 1;\n    }\n    if(encontrado == 0){\n        let diasAuditoria = registros[index].dias.split(',');\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay());\n        let asunto = \"1er Recordatorio de Auditoría Diaria Tablero LPA\";\n\n        if((hoy.getHours() == 16) && tocaDia != undefined){\n            // correo = [registros[index].email, registros[index].jefeEmail]\n            correo = 'trackingmpq.400@gmail.com'\n            asunto = \"2do Recordatorio de Auditoría Diaria Tablero LPA\"\n            let htmlSup = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre} y ${registros[index].jefe}</b>. </p>\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b> \n                    del usuario <b>${registros[index].nombre}</b>.\n                    Recomendamos que se haga el registro antes de que termine el día. \n                    </p> \n                    <p>\n                    Este correo no debería enviarse si hoy no le toca auditoría al usuario, de haber un problema, es importante notificarlo.\n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            enviarEmail(htmlSup, correo, asunto);    \n        }else if(tocaDia != undefined){\n            // correo = registros[index].email\n            correo = 'trackingmpq.400@gmail.com'\n            asunto = \"1er Recordatorio de Auditoría Diaria Tablero LPA\"\n            let htmlNormal = `\n                <html>\n                    <body>\n                        <h1>Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                        <p>Muy buenas tardes <b>${registros[index].nombre}</b>. </p>\n                        <br>\n                        <p>\n                        Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b>.\n                        Recomendamos hacer el registro de la auditoría de hoy antes de que acabé el día. \n                        </p> \n                        <p>\n                        Este correo no debería enviarse si hoy no te toca hacer auditoría, de haber un problema, es importante notificarlo.\n                        </p>\n                        <br>\n                        <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                        de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                        <br>\n                        <p><b>Saludos</b></p>\n                    </body>\n                </html>\n            `;\n            enviarEmail(htmlNormal, correo, asunto);    \n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 650,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "1585f3693f021992",
+        "type": "function",
+        "z": "400949ca1e2b628e",
+        "name": "Enviar Recordatorios P",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nvar pasado = new Date()\n\nasync function enviarEmail(mensaje, correo, asunto){\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1,\n        host: \"smtp.gmail.com\",\n        port: 465,\n        secure: true,             // true para 465, false para otros\n        auth: {\n            user: \"trackingmpq.400@gmail.com\",\n            pass: \"jjjrxrrwofydvvvn\"\n        },\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n    });\n    /*\n    const transporter = nodemailer.createTransport({\n        pool: true,\n        maxConnections: 1, \n        host: \"esai-mpq.mitchellplastics.com\", \n        port: 25,\n        secure: false,\n        ignoreTLS: true,\n        connectionTimeout: 1000000,\n        greetingTimeout: 1000000,\n        timeout: 1000000,\n        tls: {\n            rejectUnauthorized: false\n        }\n    });\n    */\n    let mailOptions = {\n        from: \"'trackingmpq.400@gmail.com'\",\n        to: correo,\n        subject: asunto,\n        html: mensaje\n    };\n    await transporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\n}\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index];\n\n    if(registroEncontrado.registros > 0){\n        encontrado = 1;\n    }\n    if(encontrado == 0){\n        let diasAuditoria = registros[index].dias.split(',');\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay());\n        let asunto = \"1er Recordatorio de Auditoría Diaria Tablero LPA\";\n\n        if((hoy.getHours() == 16) && tocaDia != undefined){\n            // correo = [registros[index].email, registros[index].jefeEmail]\n            correo = 'trackingmpq.400@gmail.com'\n            asunto = \"2do Recordatorio de Auditoría Diaria Tablero LPA\"\n            let htmlSup = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">2do Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                    <p>Muy buenas tardes <b>${registros[index].nombre} y ${registros[index].jefe}</b>. </p>\n                    <br>\n                    <p>\n                    Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b> \n                    del usuario <b>${registros[index].nombre}</b>.\n                    Recomendamos que se haga el registro antes de que termine el día. \n                    </p> \n                    <p>\n                    Este correo no debería enviarse si hoy no le toca auditoría al usuario, de haber un problema, es importante notificarlo.\n                    </p>\n                    <br>\n                    <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                    de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `;\n            enviarEmail(htmlSup, correo, asunto);    \n        }else if(tocaDia != undefined){\n            // correo = registros[index].email\n            correo = 'trackingmpq.400@gmail.com'\n            asunto = \"1er Recordatorio de Auditoría Diaria Tablero LPA\"\n            let htmlNormal = `\n                <html>\n                    <body>\n                        <h1>Recordatorio de Auditoría Pendiente Tablero LPA</h1>\n                        <p>Muy buenas tardes <b>${registros[index].nombre}</b>. </p>\n                        <br>\n                        <p>\n                        Se detectó que aún está pendiente el registro de la auditoría del día de hoy <b>${hoy.toLocaleDateString()}</b>.\n                        Recomendamos hacer el registro de la auditoría de hoy antes de que acabé el día. \n                        </p> \n                        <p>\n                        Este correo no debería enviarse si hoy no te toca hacer auditoría, de haber un problema, es importante notificarlo.\n                        </p>\n                        <br>\n                        <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n                        de automatización o envie un correo a ian.barcenas@mitchellplastics.com</i></p>\n                        <br>\n                        <p><b>Saludos</b></p>\n                    </body>\n                </html>\n            `;\n            enviarEmail(htmlNormal, correo, asunto);    \n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 750,
+        "y": 580,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "7bb6ba47a0c0067f",
+        "type": "inject",
+        "z": "37bdfc78d951f3d2",
+        "name": "9:00 Primera Notificacion",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 09 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "6414762efc65f25c",
+                "26eade731238540f"
+            ]
+        ]
+    },
+    {
+        "id": "5a95623f44df57a3",
+        "type": "file",
+        "z": "37bdfc78d951f3d2",
+        "name": "",
+        "filename": "/home/pi/mesAnterior.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 970,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6414762efc65f25c",
+        "type": "file in",
+        "z": "37bdfc78d951f3d2",
+        "name": "",
+        "filename": "/home/pi/mesAnterior.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 430,
+        "y": 80,
+        "wires": [
+            [
+                "7ffb5f4b626a8f83"
+            ]
+        ]
+    },
+    {
+        "id": "7ffb5f4b626a8f83",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "cambio MES",
+        "func": "var now = new Date();\n\nif(now.getMonth() == Number(msg.payload)){\n    msg.flag = 0;\n} else {\n    msg.flag = 1;\n    msg.payload = now.getMonth();\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 80,
+        "wires": [
+            [
+                "c19b0f9eb564bc6e"
+            ]
+        ]
+    },
+    {
+        "id": "c19b0f9eb564bc6e",
+        "type": "switch",
+        "z": "37bdfc78d951f3d2",
+        "name": "",
+        "property": "flag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 770,
+        "y": 80,
+        "wires": [
+            [
+                "5a95623f44df57a3",
+                "bfbf61294d3ea8ae"
+            ]
+        ]
+    },
+    {
+        "id": "fb94eb6fd6a4d89c",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "enviar NOTI",
+        "func": "let auditores = msg.payload;\nvar hoy = new Date();\nlet correo = '';\nlet htmlMensaje3 = `<h2 style=\"color:red;\">Auditores que NO hicieron su auditoría esta semana:</h2>`\nlet htmlMensaje1=''\nconst month = [\"Enero\",\"Febrero\",\"Marzo\",\"Abril\",\"Mayo\",\"Junio\",\"Julio\",\"Agosto\",\"Septiembre\",\"Octubre\",\"Noviembre\",\"Diciembre\"];\nconst transporter = nodemailer.createTransport({\n    pool: true, \n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < auditores.length; index++) {\n    correo = auditores[index].email\n    htmlMensaje1 = \n    `\n    <html>\n        <body>\n            <h1 style=\"color:blue;\">Nueva Auditoría Asignada Tablero LPA</h1>\n            <p>Muy buenos días <b>${auditores[index].auditor}</b> </p>.\n            <br>\n            <p>Se le ha asignado una nueva auditoría para este mes de <b>${month[hoy.getMonth()]}</b>. \n            Le recomendamos realizar su auditoría en los próximos días.</p>\n            <br>\n            <p><i>Si tiene alguna duda acerca de este correo, por favor comuniquese con el departamento\n            de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n            <br>\n            <p><b>Saludos</b></p>\n        </body>\n    </html>\n    `;\n\n    let mailOptions = {\n    from: \"mpq.lpaboard@mitchellplastics.com\", \n    to: 'ian.barcenas@mitchellplastics.com',\n    subject: \"Nueva Auditoría Asignada\",\n    html: htmlMensaje1\n    };\n\n    node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n    await transporter.sendMail(mailOptions)\n        .then(info => {\n            node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n            node.send(msg);\n        })\n        .catch(error => {\n            node.status({fill:\"red\", shape:\"ring\", text: error.message});\n            node.error(\"Error SMTP: \" + error.message, msg);\n        });\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 1130,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "4f5b4df069eb0c08",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "enviar NOTI",
+        "func": "let auditores = msg.payload;\nvar hoy = new Date();\nlet correo = '';\nlet htmlMensaje3 = `<h2 style=\"color:red;\">Auditores que NO hicieron su auditoría esta semana:</h2>`\nlet htmlMensaje1=''\nconst month = [\"Enero\",\"Febrero\",\"Marzo\",\"Abril\",\"Mayo\",\"Junio\",\"Julio\",\"Agosto\",\"Septiembre\",\"Octubre\",\"Noviembre\",\"Diciembre\"];\nconst transporter = nodemailer.createTransport({\n    pool: true, \n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\",\n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\n\nfor (let index = 0; index < auditores.length; index++) {\n    correo = auditores[index].email;\n    htmlMensaje1 = \n    `\n    <html>\n        <body>\n            <h1 style=\"color:blue;\">Nueva Auditoría Asignada Tablero LPA</h1>\n            <p>Muy buenos días <b>${auditores[index].auditor}</b> </p>.\n            <br>\n            <p>Esta semana se le ha asignado una nueva auditoría.</b>. \n            Le recomendamos realizar su auditoría en los próximos días.</p>\n            <br>\n            <p><i>Si tiene alguna duda acerca de este correo, por favor, comuniquese con el departamento\n            de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n            <br>\n            <p><b>Saludos</b></p>\n        </body>\n    </html>\n    `;\n\n    let mailOptions = {\n    from: \"mpq.lpaboard@mitchellplastics.com\", \n    to: 'ian.barcenas@mitchellplastics.com',\n    subject: \"Nueva Auditoría Asignada\",\n    html: htmlMensaje1\n    };\n\n    node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n    await transporter.sendMail(mailOptions)\n        .then(info => {\n            node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n            node.send(msg);\n        })\n        .catch(error => {\n            node.status({fill:\"red\", shape:\"ring\", text: error.message});\n            node.error(\"Error SMTP: \" + error.message, msg);\n        });\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 930,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "991f8958f5186011",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "cambio SEMANA",
+        "func": "var now = new Date();\n\nif(now.getDay() == 1){\n    msg.flag = 1;\n} else {\n    msg.flag = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "eab6cee3b48f1f23"
+            ]
+        ]
+    },
+    {
+        "id": "eab6cee3b48f1f23",
+        "type": "switch",
+        "z": "37bdfc78d951f3d2",
+        "name": "",
+        "property": "flag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "10134be20d3859d7"
+            ]
+        ]
+    },
+    {
+        "id": "a47661dfbb3a3e55",
+        "type": "debug",
+        "z": "37bdfc78d951f3d2",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9bf242840ec93a76",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "enviar NOTI",
+        "func": "let auditores = msg.payload;\nvar hoy = new Date();\nlet correo = '';\nlet htmlMensaje3 = `<h2 style=\"color:red;\">Auditores que NO hicieron su auditoría esta semana:</h2>`\nlet htmlMensaje1=''\nconst month = [\"Enero\",\"Febrero\",\"Marzo\",\"Abril\",\"Mayo\",\"Junio\",\"Julio\",\"Agosto\",\"Septiembre\",\"Octubre\",\"Noviembre\",\"Diciembre\"];\nconst transporter = nodemailer.createTransport({\n    pool: true, \n    maxConnections: 1,\n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\n\nfor (let index = 0; index < auditores.length; index++) {\n    let diasAuditoria = auditores[index].dias.split(',')\n    let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay())\n    correo = auditores[index].email;\n\n    if(tocaDia != undefined){   \n    htmlMensaje1 = \n    `\n    <html>\n        <body>\n            <h1 style=\"color:blue;\">Nueva Auditoría Asignada Tablero LPA</h1>\n            <p>Muy buenos días <b>${auditores[index].auditor}</b></p>.\n            <br>\n            <p>El día de hoy <b>${hoy.toLocaleDateString()}</b> se le ha asignado una nueva auditoría. \n            Le recomendamos realizar su auditoría durante las próximas horas.</p>\n            <br>\n            <p><i>Si tiene alguna duda acerca de este correo, por favor, comuniquese con el departamento\n            de automatización o envie correo a ian.barcenas@mitchellplastics.com</i></p>\n            <br>\n            <p><b>Saludos</b></p>\n        </body>\n    </html>\n    `;\n    let mailOptions = {\n    from: \"mpq.lpaboard@mitchellplastics.com\", \n    to: 'ian.barcenas@mitchellplastics.com',\n    subject: \"Nueva Auditoría Asignada\",\n    html: htmlMensaje1\n    };\n\n    node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n    await transporter.sendMail(mailOptions)\n        .then(info => {\n            node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n            node.send(msg);\n        })\n        .catch(error => {\n            node.status({fill:\"red\", shape:\"ring\", text: error.message});\n            node.error(\"Error SMTP: \" + error.message, msg);\n        });\n    }\n\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 630,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "eac3d4b620233fe4",
+        "type": "debug",
+        "z": "37bdfc78d951f3d2",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1c028bdc75e9bb8c",
+        "type": "inject",
+        "z": "37bdfc78d951f3d2",
+        "name": "12:30 Recordatorio Diario",
+        "props": [],
+        "repeat": "",
+        "crontab": "30 12 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "1be5ab38c150da7f"
+            ]
+        ]
+    },
+    {
+        "id": "2f4a1b74cb8779a8",
+        "type": "inject",
+        "z": "37bdfc78d951f3d2",
+        "name": "17:10 Recordatorio Diario",
+        "props": [],
+        "repeat": "",
+        "crontab": "10 17 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 440,
+        "wires": [
+            [
+                "1be5ab38c150da7f"
+            ]
+        ]
+    },
+    {
+        "id": "e0bca3a2405f9094",
+        "type": "inject",
+        "z": "37bdfc78d951f3d2",
+        "name": "05:30 Recordatorio Diario",
+        "props": [],
+        "repeat": "",
+        "crontab": "30 05 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 540,
+        "wires": [
+            [
+                "59ed21dce8872b62"
+            ]
+        ]
+    },
+    {
+        "id": "09793cb5c9f0fd0b",
+        "type": "inject",
+        "z": "37bdfc78d951f3d2",
+        "name": "02:00 Recordatorio Diario",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 02 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 620,
+        "wires": [
+            [
+                "59ed21dce8872b62"
+            ]
+        ]
+    },
+    {
+        "id": "baf17906b3872ed2",
+        "type": "inject",
+        "z": "37bdfc78d951f3d2",
+        "name": "11:45 Recordatorio Mensual",
+        "props": [],
+        "repeat": "",
+        "crontab": "45 11 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 700,
+        "wires": [
+            [
+                "0b7cba67e8b0ce55"
+            ]
+        ]
+    },
+    {
+        "id": "0b7cba67e8b0ce55",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "dias NOTI",
+        "func": "var now = new Date();\n\nif(now.getDate() == 13 || now.getDate() == 26){\n    msg.flag = 1;\n} else {\n    msg.flag = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 700,
+        "wires": [
+            [
+                "98e202e90f23937b"
+            ]
+        ]
+    },
+    {
+        "id": "98e202e90f23937b",
+        "type": "switch",
+        "z": "37bdfc78d951f3d2",
+        "name": "",
+        "property": "flag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 700,
+        "wires": [
+            [
+                "3e765c817f89df8f"
+            ]
+        ]
+    },
+    {
+        "id": "0010c29cc5c7d79c",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "matching REGISTROS",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1, // MÃ¡ximo 3 conexiones simultÃ¡ne\n    host: \"esai-mpq.mitchellplastics.com\", // Cambia por tu IP o dominio\n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    if(registros[index].registros > 0){\n        encontrado = 1;\n        correo = '';\n    } \n\n    if(encontrado == 0){\n        correo = registros[index].email;\n        let diasAuditoria = registros[index].dias.split(',');\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay())\n\n        if(tocaDia != undefined){\n          let htmlMensaje1 = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">Recordatorio Tablero LPA</h1>\n                    <p>Hola ${registros[index].nombre}</p>\n                    <br>\n                    <p> Le informamos que no se ha detectado ningún registro para su aditoría en el tablero LPA el dia de hoy <b>${hoy.toLocaleDateString()}</b> por lo que \n                    sigue pendiente. </p>\n                    <br>\n                    <p>Le recomendamos realizarla antes de que termine el día. Cualquier duda respecto a este correo,\n                    por favor, comuniquela con el departamento de automatización o envie correo a ian.barcenas@mitchellplastics.com</p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `; \n            let mailOptions = {\n            from: \"mpq.lpaboard@mitchellplastics.com\", \n            to: 'ian.barcenas@mitchellplastics.com',\n            subject: \"Recordatorio Auditoría LPA Pendiente\",\n            html: htmlMensaje1\n            };\n\n            node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n            await transporter.sendMail(mailOptions)\n                .then(info => {\n                    node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n                    node.send(msg);\n                })\n                .catch(error => {\n                    node.status({fill:\"red\", shape:\"ring\", text: error.message});\n                    node.error(\"Error SMTP: \" + error.message, msg);\n                });\n\n        }\n    }\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 680,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "cb7a33acc72bd084",
+        "type": "debug",
+        "z": "37bdfc78d951f3d2",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "17b6f1b0884195ee",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "matching REGISTROS",
+        "func": "let registros = msg.payload;\nvar hoy = new Date();\nlet correo = '';\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    if(registros[index].registros > 0){\n        encontrado = 1;\n        correo = '';\n    } \n\n    if(encontrado == 0){\n        let diasAuditoria = registros[index].dias.split(',')\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay())\n        correo = registros[index].email;\n        if(tocaDia != undefined){\n          let htmlMensaje1 = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">Recordatorio Tablero LPA</h1>\n                    <p>Hola ${registros[index].nombre}</p>\n                    <br>\n                    <p> Le informamos que no se ha detectado ningún registro para su aditoría en el tablero LPA el dia de hoy <b>${hoy.toLocaleDateString()}</b> por lo que sigue pendiente. </p>\n                    <br>\n                    <p>Le recomendamos realizarla antes de que termine el día. Cualquier duda respecto a este correo,\n                    por favor, comuniquela con el departamento de automatización o envie correo a ian.barcenas@mitchellplasctis.com</p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `; \n            let mailOptions = {\n            from: \"mpq.lpaboard@mitchellplastics.com\", \n            to: 'ian.barcenas@mitchellplastics.com',\n            subject: \"Recordatorio Auditoría LPA Pendiente\",\n            html: htmlMensaje1\n            };\n\n            node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n            await transporter.sendMail(mailOptions)\n                .then(info => {\n                    node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n                    node.send(msg);\n                })\n                .catch(error => {\n                    node.status({fill:\"red\", shape:\"ring\", text: error.message});\n                    node.error(\"Error SMTP: \" + error.message, msg);\n                });\n\n        }\n    }\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 660,
+        "y": 580,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "a0fad360e2581b7d",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "matching REGISTROS",
+        "func": "let registros = msg.payload;\nlet correo = '';\nvar hoy = new Date();\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1, \n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,\n    ignoreTLS: true,\n    connectionTimeout: 1000000,\n    greetingTimeout: 1000000,\n    timeout: 1000000,\n    tls: {\n        rejectUnauthorized: false\n    }\n});\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    if(registros[index].registros > 0){\n        encontrado = 1;\n        correo = '';\n    } \n\n    if(encontrado == 0){\n        let diasAuditoria = registros[index].dias.split(',')\n        let tocaDia = diasAuditoria.find(dia => dia == hoy.getDay())\n\n        correo = registros[index].email;\n        if(tocaDia != undefined){\n          let htmlMensaje1 = \n            `\n            <html>\n                <body>\n                    <h1 style=\"color:red;\">Recordatorio Tablero LPA</h1>\n                    <p>Hola ${registros[index].nombre}</p>\n                    <br>\n                    <p> Le informamos que no se ha detectado ningún registro para su aditoría en el tablero LPA en este mes, por lo que\n                    sigue pendiente. </p>\n                    <br>\n                    <p>Le recomendamos realizarla antes de que termine el mes. Cualquier duda respecto a este correo,\n                    por favor, comuniquela con el departamento de automatización o envie correo a ian.barcenas@mitchellplastics.com</p>\n                    <br>\n                    <p><b>Saludos</b></p>\n                </body>\n            </html>\n            `; \n            let mailOptions = {\n            from: \"mpq.lpaboard@mitchellplastics.com\", \n            to: 'ian.barcenas@mitchellplastics.com',\n            subject: \"Recordatorio Auditoría LPA Pendiente\",\n            html: htmlMensaje1\n            };\n\n            node.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\n            await transporter.sendMail(mailOptions)\n                .then(info => {\n                    node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n                    node.send(msg);\n                })\n                .catch(error => {\n                    node.status({fill:\"red\", shape:\"ring\", text: error.message});\n                    node.error(\"Error SMTP: \" + error.message, msg);\n                });\n\n        }\n    }\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 900,
+        "y": 700,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/envelope.svg"
+    },
+    {
+        "id": "6239297155ba1d51",
+        "type": "comment",
+        "z": "37bdfc78d951f3d2",
+        "name": "Flujo para primera notificación",
+        "info": "# Primera notificación a las 9 de la mañana\n\nPara el usuario que haga registros mensuales \nse ha creado un archivo .txt que almacena el \nmes anterior a la fecha actual.\n\nLa primera notificación para los usuarios de auditorías\nsemanales reciben la notificación el Lunes a las 9 de la mañana.\n\nLos demás usuarios recibirán una notificación en los \ndías marcados en la base de datos en [pgadmin4](http://192.168.250.201:5050/browser/).\n\nSi se revisa la base datos se notará que cada auditor cuenta\ncon el atributo \"dias\" cuyo formato es de un csv; 1,2,3 representa\nLunes,Martes,Miércoles. \n\n",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "382691dccc8b7bb7",
+        "type": "comment",
+        "z": "37bdfc78d951f3d2",
+        "name": "Notificaciones para auditorias diarias",
+        "info": "# Primera notificación a las 9 de la mañana\nPara usuarios que trabajan en el día. Debe \nespecificar los usuarios en la vista v_registros.\n\n\n",
+        "x": 180,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1ba7c859215c7454",
+        "type": "comment",
+        "z": "37bdfc78d951f3d2",
+        "name": "Notificaciones para auditorias diarias turno noche",
+        "info": "# Primera notificación a las 9 de la mañana\nPara usuarios que trabajan en la noche. Debe \nespecificar los usuarios en la vista v_noche_registros.\n\n\n",
+        "x": 220,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "bfbf61294d3ea8ae",
+        "type": "postgresql",
+        "z": "37bdfc78d951f3d2",
+        "name": "consultar AUDITORES",
+        "query": "SELECT nombre AS auditor, \nemail AS email\nFROM auditores \nWHERE dias = 'mensual'\nORDER BY nombre",
+        "postgreSQLConfig": "3833835e6c9209f7",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 940,
+        "y": 140,
+        "wires": [
+            [
+                "fb94eb6fd6a4d89c"
+            ]
+        ]
+    },
+    {
+        "id": "10134be20d3859d7",
+        "type": "postgresql",
+        "z": "37bdfc78d951f3d2",
+        "name": "consultar AUDITORES",
+        "query": "SELECT nombre AS auditor, \nemail AS email\nFROM auditores \nWHERE dias = 'semanal'\nORDER BY nombre",
+        "postgreSQLConfig": "3833835e6c9209f7",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 740,
+        "y": 200,
+        "wires": [
+            [
+                "4f5b4df069eb0c08",
+                "a47661dfbb3a3e55"
+            ]
+        ]
+    },
+    {
+        "id": "980744f2024d8b64",
+        "type": "postgresql",
+        "z": "37bdfc78d951f3d2",
+        "name": "consultar AUDITORES",
+        "query": "SELECT nombre AS auditor, \nemail AS email,\ndias\nFROM auditores \nWHERE dias <> 'semanal' AND dias <> 'mensual'\nORDER BY nombre",
+        "postgreSQLConfig": "3833835e6c9209f7",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 420,
+        "y": 280,
+        "wires": [
+            [
+                "9bf242840ec93a76"
+            ]
+        ]
+    },
+    {
+        "id": "3e765c817f89df8f",
+        "type": "postgresql",
+        "z": "37bdfc78d951f3d2",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_mes;",
+        "postgreSQLConfig": "3833835e6c9209f7",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 680,
+        "y": 700,
+        "wires": [
+            [
+                "a0fad360e2581b7d"
+            ]
+        ]
+    },
+    {
+        "id": "069527be1b4f6aee",
+        "type": "postgresql",
+        "z": "37bdfc78d951f3d2",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros",
+        "postgreSQLConfig": "3833835e6c9209f7",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 440,
+        "y": 400,
+        "wires": [
+            [
+                "cb7a33acc72bd084",
+                "0010c29cc5c7d79c"
+            ]
+        ]
+    },
+    {
+        "id": "103f4772cf99670a",
+        "type": "postgresql",
+        "z": "37bdfc78d951f3d2",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_noche_registros",
+        "postgreSQLConfig": "3833835e6c9209f7",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 440,
+        "y": 580,
+        "wires": [
+            [
+                "17b6f1b0884195ee"
+            ]
+        ]
+    },
+    {
+        "id": "036038575ff2deaa",
+        "type": "switch",
+        "z": "37bdfc78d951f3d2",
+        "name": "",
+        "property": "flag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "916a25a8400270e1",
+        "type": "inject",
+        "z": "37bdfc78d951f3d2",
+        "name": "18:00 Envio semanal",
+        "props": [],
+        "repeat": "",
+        "crontab": "05 18 * * 5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 780,
+        "wires": [
+            [
+                "08944cc118548de5"
+            ]
+        ]
+    },
+    {
+        "id": "905790d04ed8e511",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "matching REGISTROS",
+        "func": "let registros = msg.payload;\nvar hoy = new Date();\nvar pasado = new Date()\npasado = pasado.setDate(hoy.getDate() - 4)\nvar pasado_formato = new Date(pasado)\nlet total = 0;\nlet htmlMensaje2 = '';\nlet htmlMensaje3 = `<h2 style=\"color:red;\">Auditores que NO hicieron su auditoría esta semana:</h2>`\nvar JEflag = 0; // Jonathan-Pinto flag \nvar OSflag = 0; // Omar-Scott flag\nlet ADflag = 0; // Anahi-Diego flag\nvar JERegistros = 0;\nvar OSRegistros = 0;\nlet ADRegistros = 0;\nlet auditoresPares = ['Anahi Aguilar', 'Diego Mandujano', 'Scott Coulter', 'Omar Sanchez', 'Jonathan Kebick', 'Eduardo Pinto']\n\nfor (let index = 0; index < registros.length; index++) {\n    let encontrado = 0;\n    let registroEncontrado = registros[index];\n\n    if(registroEncontrado.registros > 0){\n        let maximo = 0;\n        let diasAuditoria = registros[index].dias.split(',');\n\n        if(diasAuditoria == \"semanal\"){\n            maximo = 1;\n        } else {\n            maximo = diasAuditoria.length;\n        }\n\n        total += Number(registroEncontrado.registros);\n        if(registroEncontrado.nombre == 'Jonathan Kebick' || registroEncontrado.nombre == 'Eduardo Pinto'){\n            JERegistros += Number(registroEncontrado.registros); \n            JEflag = 1;\n        } else if (registroEncontrado.nombre == 'Scott Coulter' || registroEncontrado.nombre == 'Omar Sanchez'){\n            OSRegistros += Number(registroEncontrado.registros);\n            OSflag = 1;\n        } else if (registroEncontrado.nombre == 'Anahi Aguilar' || registroEncontrado.nombre == 'Diego Mandujano') {\n            ADRegistros += Number(registroEncontrado.registros);\n            ADflag = 1;\n        } else{\n            htmlMensaje2 += `<li>${registroEncontrado.nombre} : <span style=\"color: ${registroEncontrado.registros >= maximo ? 'green' : 'red'};\">${registroEncontrado.registros} / ${maximo}</span></li>`\n        }\n        encontrado = 1;\n    } \n    if(encontrado == 0 && !(auditoresPares.includes(registros[index].nombre))){\n        htmlMensaje3 += `<li>${registros[index].nombre}</li>`\n    }\n\n}\nif(JERegistros > 0){ \n    htmlMensaje2 += `<li>Jonathan Kebick/Eduardo Pinto:<span style=\"color: 'green';\"> ${JERegistros} / 1</span></li>`\n} else {\n    htmlMensaje3 += `<li>Jonathan Kebick/Eduardo Pinto</li>`\n}\nif(OSRegistros > 0){\n    htmlMensaje2 += `<li>Scott Coulter/Omar Sanchez:<span style=\"color: 'green';\"> ${OSRegistros} / 1</span> </li>`\n}else {\n    htmlMensaje3 += `<li>Scott Coulter/Omar Sanchez</li>`\n}\nif(ADRegistros > 0){\n    htmlMensaje2 += `<li>Anahí Aguilar/Diego Mandujano:<span style=\"color: 'green';\"> ${ADRegistros} / 1 </span></li>`\n} else {\n    htmlMensaje3 += `<li>Anahí Aguilar/Diego Mandujano</li>`\n}\nJEflag = 0;\nOSflag = 0;\nADflag = 0;\n\nlet htmlMensaje1 = \n`\n<html>\n    <body>\n        <h1 style=\"color:blue;\">Reporte Semanal de Registros Tablero LPA</h1>\n        <p> Se han hecho ${total} registros en el tablero desde el <b>${pasado_formato.toLocaleDateString()}</b> hasta el \n        <b>${hoy.toLocaleDateString()}</b>. </p>\n        <h2 style=\"color:green;\">Auditores y cantidad de registros:</h2>\n    </body>\n</html>\n`;\nmsg.payload = htmlMensaje1 + htmlMensaje2 + htmlMensaje3;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 780,
+        "wires": [
+            [
+                "890e403366844661"
+            ]
+        ]
+    },
+    {
+        "id": "890e403366844661",
+        "type": "function",
+        "z": "37bdfc78d951f3d2",
+        "name": "enviar CORREO",
+        "func": "/*********************************************************************\nPor IAN LUIS BARCENAS MORENO amorosamente para mitchi: IanDeidad en github\nhttps://github.com/IanDeidad\n\nEste codigo se divide en dos partes, la primera genera el correo electronico\nalmacenando el mensaje en una cadena de texto estructurada con la sintaxis de\nHTML para formar el formato del cuerpo del correo (colores, tamanos de fuente etc.)\n\nPARA QUE EL CODIGO FUNCIONE:\nEs necesario ir al apartado de configuracion e importar la libreria de \nNode.js nodemail. De ahi que sea necesario usar este nodo y NOO el de email normal\nque se instala en los pallets de node-red como en el flujo deprecated de este programa\n\nSe debe instalar con node.js con el comando:\n\nnpm install nodemail \n\nEN LA DIRECCION donde esta node-red instalado. Suele estar como archivo oculto .node-red\nen el usuario de la raspberry.\n\n********************************************************************\n/*-------------------------- Conexion con servidor y envio con SMTP ----------------------------------------------------------------------------- */\nconst transporter = nodemailer.createTransport({\n    pool: true,\n    maxConnections: 1,\n    host: \"esai-mpq.mitchellplastics.com\", \n    port: 25,\n    secure: false,       \n    ignoreTLS: true,      \n    connectionTimeout: 1000000, \n    greetingTimeout: 1000000,   \n    timeout: 1000000, \n    tls: {\n        rejectUnauthorized: false \n    }\n});\n\nconst mailOptions = {\n    from: \"mpq.lpaboard@mitchellplastics.com\", \n    to: 'ian.barcenas@mitchellplastics.com',\n    subject: \"Reporte Semanal Tablero LPA\",\n    html: msg.payload\n};\n\n\nnode.status({fill:\"blue\", shape:\"dot\", text:\"Esperando saludo del servidor ...\"});\n\ntransporter.sendMail(mailOptions)\n    .then(info => {\n        node.status({fill:\"green\", shape:\"dot\", text:\"Enviado correctamente\"});\n        node.send(msg);\n    })\n    .catch(error => {\n        node.status({fill:\"red\", shape:\"ring\", text: error.message});\n        node.error(\"Error SMTP: \" + error.message, msg);\n    });\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "nodemailer",
+                "module": "nodemailer"
+            }
+        ],
+        "x": 800,
+        "y": 780,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-envelope"
+    },
+    {
+        "id": "08944cc118548de5",
+        "type": "postgresql",
+        "z": "37bdfc78d951f3d2",
+        "name": "consultar REGISTROS",
+        "query": "SELECT * FROM v_registros_semana",
+        "postgreSQLConfig": "c988a123dbaff1be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 380,
+        "y": 780,
+        "wires": [
+            [
+                "905790d04ed8e511"
+            ]
+        ]
+    }
+]
