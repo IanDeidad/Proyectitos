@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post en Github 1"
+    },
+    {
+      "id": 2,
+      "title": "Post en Github 2"
+    },
+    {
+      "id": 3,
+      "title": "Post en Github 3"
+    }
+  ],
+  "Apartado1": [
+    {
+      "id": 4,
+      "title": "Post en Github 4"
+    },
+    {
+      "id": 5,
+      "title": "Post en Github 5"
+    },
+    {
+      "id": 6,
+      "title": "Post en Github 6"
+    }
+  ],
+  "NuevoRegistro": [
+    {
+      "id": "1",
+      "vs_inspection": "OK",
+      "electrical_test": "NG",
+      "tiempo_ciclo": "53"
+    },
+    {
+      "id": "20260427153021_42351A00",
+      "vs_inspection": "TEST",
+      "electrical_test": "NG",
+      "tiempo_ciclo": "0"
+    },
+    {
+      "id": "20260427153424_42351A00",
+      "vs_inspection": "TEST",
+      "electrical_test": "TEST",
+      "tiempo_ciclo": "0"
+    }
+  ]
+}

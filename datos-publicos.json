@@ -1,0 +1,26 @@
+[
+  {
+    "priv": [
+      {
+        "id": 1,
+        "title": "Post en Github 1"
+      },
+      {
+        "id": 2,
+        "title": "Post en Github 2"
+      },
+      {
+        "id": 3,
+        "title": "Post en Github 3"
+      }
+    ],
+    "profile": {
+      "name": "Ian"
+    }
+  },
+  {
+    "data1": "valor1",
+    "data2": 100,
+    "fecha": "2026-06-04T20:20:17.634Z"
+  }
+]
